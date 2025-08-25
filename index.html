@@ -3,55 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Militia Spotlight - Transitioning to Independent Platform</title>
-    <meta name="description" content="Militia Spotlight is transitioning from The Washington Institute to an independent platform. Launching September 2025.">
+    <title>Militia Spotlight — Premium Intelligence Platform</title>
+    <meta name="description" content="An independent intelligence platform transitioning from The Washington Institute. Launching September 2025.">
     
     <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --black-rich: #0a0a0a;
-            --black-soft: #141414;
-            --gray-dark: #1e1e1e;
-            --gray-medium: #2a2a2a;
-            --white: #e9ecef;
-            --white-soft: #f8f9fa;
+            /* Premium Color System */
+            --black-void: #000000;
+            --black-rich: #0d0d0d;
+            --black-soft: #1a1a1a;
+            --gray-obsidian: #1e1e1e;
+            --gray-charcoal: #2d2d30;
+            --gray-slate: #404040;
+            --gray-storm: #6b7280;
+            --gray-silver: #9ca3af;
+            --white-pure: #ffffff;
+            --white-pearl: #f8fafc;
             
-            /* Elegant Accent Colors */
-            --accent-primary: #6366f1;
-            --accent-secondary: #8b5cf6;
-            --accent-tertiary: #06b6d4;
-            --accent-warm: #f59e0b;
-            --accent-rose: #ec4899;
+            /* Luxury Accent Palette */
+            --gold-primary: #d4af37;
+            --gold-light: #e8c547;
+            --gold-dark: #b8941f;
+            --copper: #b87333;
+            --platinum: #e5e4e2;
+            --emerald: #10b981;
+            --sapphire: #3b82f6;
+            --ruby: #ef4444;
             
-            /* Gradient Colors */
-            --gradient-primary: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #06b6d4 100%);
-            --gradient-warm: linear-gradient(135deg, #f59e0b 0%, #ec4899 100%);
-            --gradient-cool: linear-gradient(135deg, #06b6d4 0%, #6366f1 100%);
-            --gradient-purple: linear-gradient(135deg, #8b5cf6 0%, #6366f1 100%);
+            /* Premium Gradients */
+            --gradient-luxury: linear-gradient(135deg, #d4af37 0%, #b8941f 50%, #8b7355 100%);
+            --gradient-night: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d30 100%);
+            --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+            --gradient-glow: radial-gradient(circle at center, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
             
-            /* Text Colors */
-            --gray-text: #cbd5e1;
-            --gray-muted: #94a3b8;
-            --text-accent: #e2e8f0;
+            /* Professional Shadows */
+            --shadow-ambient: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-elevated: 0 4px 12px rgba(0,0,0,0.15);
+            --shadow-floating: 0 8px 32px rgba(0,0,0,0.12);
+            --shadow-dramatic: 0 20px 60px rgba(0,0,0,0.4);
+            --shadow-luxury: 0 4px 20px rgba(212, 175, 55, 0.25);
+            --glow-gold: 0 0 30px rgba(212, 175, 55, 0.3);
             
-            /* Shadows & Effects */
-            --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.4);
-            --shadow-glow: 0 0 20px rgba(99, 102, 241, 0.15);
-            --shadow-accent: 0 4px 20px rgba(139, 92, 246, 0.2);
+            /* Layout Constants */
+            --container-max: 1400px;
+            --section-padding: 120px;
+            --element-radius: 12px;
+            --border-width: 1px;
             
-            /* Plate & Card Colors */
-            --plate-start: #0f1419;
-            --plate-mid: #1a1f29;
-            --plate-end: #252a3a;
-            --card-start: #111827;
-            --card-mid: #1f2937;
-            --card-end: #374151;
-            --border-subtle: rgba(99, 102, 241, 0.2);
-            --border-accent: rgba(139, 92, 246, 0.3);
+            /* Animation Curves */
+            --ease-luxury: cubic-bezier(0.23, 1, 0.320, 1);
+            --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
@@ -62,699 +68,767 @@
 
         html {
             scroll-behavior: smooth;
+            font-size: 16px;
         }
 
         body {
-            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--black-rich);
-            color: var(--white);
-            line-height: 1.65;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--black-void);
+            color: var(--white-pure);
+            line-height: 1.6;
             font-weight: 400;
             overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
-        .page {
+        /* Custom Cursor */
+        body {
+            cursor: none;
+        }
+
+        .cursor {
+            position: fixed;
+            width: 20px;
+            height: 20px;
+            background: var(--gradient-luxury);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: all 0.1s ease;
+        }
+
+        .cursor.hover {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: 2px solid var(--gold-primary);
+            mix-blend-mode: normal;
+        }
+
+        /* Premium Container */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Luxury Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: var(--border-width) solid rgba(212, 175, 55, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 0;
+        }
+
+        /* Premium Logo */
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            text-decoration: none;
+            color: var(--white-pure);
+        }
+
+        .logo-mark {
+            width: 48px;
+            height: 48px;
+            position: relative;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--gray-silver);
+            text-decoration: none;
+            letter-spacing: 0.02em;
+            transition: color 0.3s var(--ease-smooth);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--gold-primary);
+            transition: width 0.3s var(--ease-luxury);
+        }
+
+        .nav-link:hover {
+            color: var(--gold-primary);
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
             min-height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
             align-items: center;
-            padding: 3rem 2rem;
+            position: relative;
+            padding: var(--section-padding) 0;
+            background: var(--gradient-night);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--gradient-glow);
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
             text-align: center;
-            position: relative;
         }
 
-        /* Page 1 - Transition */
-        .page-1 {
-            background: linear-gradient(135deg, var(--black-rich) 0%, var(--black-soft) 50%, var(--gray-dark) 100%);
-            position: relative;
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(212, 175, 55, 0.1);
+            border: var(--border-width) solid rgba(212, 175, 55, 0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            margin-bottom: 2rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gold-primary);
+            letter-spacing: 0.02em;
+            animation: fadeInUp 0.8s var(--ease-luxury);
         }
 
-        .page-1::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 70%, rgba(201, 169, 97, 0.03) 0%, transparent 50%);
-            pointer-events: none;
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--emerald);
+            border-radius: 50%;
+            animation: pulse 2s infinite;
         }
 
-        .logo {
-            margin-bottom: 3rem;
-            position: relative;
-            z-index: 10;
-            padding-top: 2rem;
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
         }
 
-        .logo-circles {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 2.5rem;
-            position: relative;
-            filter: drop-shadow(var(--shadow-glow));
-        }
-
-        .logo-circles svg {
-            width: 100%;
-            height: 100%;
-        }
-
-        .site-title {
-            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 28px;
-            font-weight: 600;
-            letter-spacing: 0.15em;
-            color: var(--white);
-            margin-bottom: 0;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .amber-line {
-            width: 140px;
-            height: 2px;
-            background: var(--gradient-purple);
-            margin: 2rem auto 4rem;
-            opacity: 0.9;
-            border-radius: 1px;
-        }
-
-        .transition-box {
-            background: linear-gradient(135deg, var(--plate-start) 0%, var(--plate-mid) 50%, var(--plate-end) 100%);
-            border: 1px solid var(--border-subtle);
-            border-left: 3px solid transparent;
-            border-left-image: var(--gradient-purple) 1;
-            padding: 3.5rem 3rem;
-            max-width: 720px;
-            margin: 0 auto;
-            box-shadow: var(--shadow-accent);
-            backdrop-filter: blur(15px);
-            position: relative;
-            z-index: 10;
-            border-radius: 8px;
-        }
-
-        .transition-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.03) 0%, rgba(139, 92, 246, 0.02) 50%, transparent 70%);
-            pointer-events: none;
-            border-radius: 8px;
-        }
-
-        .transition-box::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 3px;
-            background: var(--gradient-purple);
-            border-radius: 0 0 0 8px;
-        }
-
-        .transition-title {
-            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 24px;
-            font-weight: 600;
-            background: var(--gradient-primary);
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--white-pure) 0%, var(--gray-silver) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            margin-bottom: 2rem;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            position: relative;
+            animation: fadeInUp 0.8s var(--ease-luxury) 0.2s both;
         }
 
-        .transition-text {
-            font-size: 17px;
-            line-height: 1.8;
-            margin-bottom: 1.5rem;
-            color: var(--gray-text);
-            font-weight: 400;
-            position: relative;
+        .hero-subtitle {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--gray-silver);
+            margin-bottom: 1rem;
+            letter-spacing: 0.02em;
+            animation: fadeInUp 0.8s var(--ease-luxury) 0.4s both;
         }
 
-        .launch-date {
-            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 22px;
-            font-weight: 600;
-            color: var(--white);
-            margin: 2.5rem 0 1.5rem;
-            letter-spacing: 0.05em;
-            position: relative;
+        .hero-description {
+            font-size: 1.125rem;
+            color: var(--gray-storm);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            line-height: 1.7;
+            animation: fadeInUp 0.8s var(--ease-luxury) 0.6s both;
         }
 
-        .cta-button {
+        /* Premium CTA Button */
+        .cta-primary {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: transparent;
-            color: var(--accent-primary);
+            gap: 0.75rem;
+            background: var(--gradient-luxury);
+            color: var(--black-void);
             text-decoration: none;
-            border: 1.5px solid transparent;
-            border-image: var(--gradient-cool) 1;
-            padding: 14px 28px;
-            margin-top: 2.5rem;
-            font-weight: 500;
-            font-size: 15px;
-            transition: all 0.4s cubic-bezier(0.23, 1, 0.320, 1);
+            padding: 1rem 2rem;
+            border-radius: var(--element-radius);
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.02em;
+            box-shadow: var(--shadow-luxury);
+            transition: all 0.4s var(--ease-luxury);
+            animation: fadeInUp 0.8s var(--ease-luxury) 0.8s both;
             position: relative;
             overflow: hidden;
-            border-radius: 6px;
         }
 
-        .cta-button::before {
+        .cta-primary::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: var(--gradient-cool);
-            transition: left 0.4s cubic-bezier(0.23, 1, 0.320, 1);
-            z-index: -1;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s ease;
         }
 
-        .cta-button:hover::before {
-            left: 0;
+        .cta-primary:hover::before {
+            left: 100%;
         }
 
-        .cta-button:hover {
-            color: var(--white);
+        .cta-primary:hover {
             transform: translateY(-2px);
-            box-shadow: var(--shadow-accent);
+            box-shadow: var(--glow-gold);
         }
 
-        /* Page 2 - Mission */
-        .page-2 {
-            background: linear-gradient(135deg, var(--black-rich) 0%, var(--gray-dark) 100%);
+        .cta-icon {
+            font-size: 1.25rem;
+            transition: transform 0.3s var(--ease-luxury);
+        }
+
+        .cta-primary:hover .cta-icon {
+            transform: translateX(4px);
+        }
+
+        /* Transition Section */
+        .transition {
+            padding: var(--section-padding) 0;
+            background: var(--black-rich);
             position: relative;
         }
 
-        .page-2::before {
+        .transition::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 70% 30%, rgba(99, 102, 241, 0.03) 0%, transparent 60%),
-                radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.02) 0%, transparent 50%),
-                radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.01) 0%, transparent 40%);
-            pointer-events: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            opacity: 0.3;
         }
 
-        .mission-title {
-            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 36px;
-            font-weight: 500;
-            letter-spacing: 0.12em;
-            margin-bottom: 4rem;
-            margin-top: 1rem;
-            color: var(--white);
+        .transition-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .transition-info {
+            background: var(--gradient-glass);
+            backdrop-filter: blur(20px);
+            border: var(--border-width) solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--element-radius);
+            padding: 3rem;
+            box-shadow: var(--shadow-floating);
+        }
+
+        .section-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gold-primary);
             text-transform: uppercase;
-            position: relative;
-            z-index: 10;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
         }
 
-        .mission-title::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--white-pure);
+        }
+
+        .section-text {
+            font-size: 1.125rem;
+            color: var(--gray-silver);
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .timeline {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .timeline-date {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--gold-primary);
+        }
+
+        .timeline-line {
             height: 2px;
-            background: var(--gradient-warm);
+            background: var(--gradient-luxury);
+            flex: 1;
             border-radius: 1px;
+        }
+
+        /* Mission Section */
+        .mission {
+            padding: var(--section-padding) 0;
+            background: var(--black-soft);
+        }
+
+        .mission-header {
+            text-align: center;
+            margin-bottom: 4rem;
         }
 
         .mission-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 2.5rem;
-            max-width: 1000px;
-            margin: 0 auto 4rem;
-            position: relative;
-            z-index: 10;
-            padding: 0 1rem;
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
 
-        .mission-item {
-            background: linear-gradient(135deg, var(--card-start) 0%, var(--card-mid) 50%, var(--card-end) 100%);
-            border: 1px solid var(--border-subtle);
-            border-left: 3px solid transparent;
-            padding: 2.5rem 2rem;
-            text-align: left;
-            transition: all 0.3s cubic-bezier(0.23, 1, 0.320, 1);
+        .mission-card {
+            background: var(--gradient-glass);
+            backdrop-filter: blur(20px);
+            border: var(--border-width) solid rgba(255, 255, 255, 0.1);
+            border-radius: var(--element-radius);
+            padding: 2.5rem;
             position: relative;
+            transition: all 0.4s var(--ease-luxury);
             overflow: hidden;
-            border-radius: 8px;
         }
 
-        .mission-item::before {
+        .mission-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.02) 0%, rgba(139, 92, 246, 0.02) 50%, transparent 70%);
+            background: var(--gradient-glow);
             opacity: 0;
-            transition: opacity 0.3s ease;
-            border-radius: 8px;
+            transition: opacity 0.4s var(--ease-luxury);
         }
 
-        .mission-item::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            bottom: 0;
-            width: 3px;
-            background: var(--gradient-primary);
-            border-radius: 0 0 0 8px;
+        .mission-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.3);
+            box-shadow: var(--shadow-dramatic);
         }
 
-        .mission-item:hover {
-            transform: translateY(-4px);
-            border-color: var(--border-accent);
-            box-shadow: var(--shadow-accent);
+        .mission-card:hover::before {
+            opacity: 0.3;
         }
 
-        .mission-item:hover::before {
-            opacity: 1;
-        }
-
-        .mission-item h3 {
-            font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            font-size: 16px;
-            font-weight: 600;
-            background: var(--gradient-warm);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            position: relative;
-        }
-
-        .mission-item p {
-            color: var(--gray-text);
-            font-size: 15px;
-            line-height: 1.7;
-            font-weight: 400;
-            position: relative;
-        }
-
-        .current-location {
-            font-size: 13px;
-            color: var(--gray-muted);
-            margin-top: 3rem;
-            text-align: center;
+        .mission-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--gradient-luxury);
+            border-radius: var(--element-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
             position: relative;
             z-index: 10;
         }
 
-        .current-location a {
-            background: var(--gradient-cool);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .mission-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--black-void);
+        }
+
+        .mission-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--white-pure);
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .mission-description {
+            font-size: 1rem;
+            color: var(--gray-silver);
+            line-height: 1.6;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Current Platform */
+        .current-platform {
+            text-align: center;
+            padding: 2rem;
+            background: rgba(212, 175, 55, 0.05);
+            border: var(--border-width) solid rgba(212, 175, 55, 0.2);
+            border-radius: var(--element-radius);
+        }
+
+        .platform-link {
+            color: var(--gold-primary);
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.2s ease;
+            font-weight: 600;
+            transition: color 0.3s var(--ease-smooth);
         }
 
-        .current-location a:hover {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-decoration: underline;
+        .platform-link:hover {
+            color: var(--gold-light);
         }
 
-        /* Responsive */
-        @media (max-width: 1200px) {
-            .mission-grid {
-                max-width: 850px;
+        /* Footer */
+        .footer {
+            padding: 3rem 0;
+            background: var(--black-void);
+            border-top: var(--border-width) solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-text {
+            font-size: 0.875rem;
+            color: var(--gray-storm);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
             }
         }
 
+        /* Responsive Design */
         @media (max-width: 1024px) {
-            .page {
-                padding: 2.5rem 2rem;
+            .container {
+                padding: 0 1.5rem;
             }
             
-            .logo {
-                padding-top: 1.5rem;
-            }
-            
-            .logo-circles {
-                width: 110px;
-                height: 110px;
-            }
-            
-            .site-title {
-                font-size: 26px;
-            }
-            
-            .mission-title {
-                font-size: 32px;
-            }
-            
-            .transition-box {
-                max-width: 680px;
-                padding: 3rem 2.5rem;
+            .transition-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
             }
         }
 
         @media (max-width: 768px) {
-            .page {
-                padding: 2rem 1.5rem;
-                min-height: 100vh;
+            body {
+                cursor: auto;
             }
             
-            .logo {
-                padding-top: 1rem;
-                margin-bottom: 2.5rem;
+            .cursor {
+                display: none;
             }
             
-            .logo-circles {
-                width: 100px;
-                height: 100px;
-                margin-bottom: 2rem;
+            .nav {
+                display: none;
             }
             
-            .site-title {
-                font-size: 24px;
-                letter-spacing: 0.12em;
+            .hero {
+                padding: 80px 0;
             }
             
-            .amber-line {
-                margin: 1.5rem auto 3rem;
-                width: 120px;
-            }
-            
-            .transition-title {
-                font-size: 20px;
-            }
-            
-            .transition-text {
-                font-size: 16px;
-            }
-            
-            .launch-date {
-                font-size: 20px;
-            }
-            
-            .mission-title {
-                font-size: 28px;
-                margin-bottom: 3.5rem;
-                margin-top: 0.5rem;
+            .hero-title {
+                font-size: 3rem;
             }
             
             .mission-grid {
                 grid-template-columns: 1fr;
-                gap: 2rem;
-                max-width: 520px;
-                padding: 0;
             }
             
-            .transition-box {
-                padding: 2.5rem 2rem;
-                max-width: 95%;
+            .transition-info {
+                padding: 2rem;
             }
             
-            .mission-item {
-                padding: 2rem 1.5rem;
-            }
-            
-            .scroll-indicator {
-                bottom: 2rem;
+            .section-title {
+                font-size: 2rem;
             }
         }
 
         @media (max-width: 480px) {
-            .page {
-                padding: 1.5rem 1rem;
+            .container {
+                padding: 0 1rem;
             }
             
-            .logo {
-                padding-top: 0.5rem;
-                margin-bottom: 2rem;
+            .hero-badge {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
             }
             
-            .logo-circles {
-                width: 90px;
-                height: 90px;
-                margin-bottom: 1.5rem;
-            }
-            
-            .site-title {
-                font-size: 20px;
-                letter-spacing: 0.1em;
-            }
-            
-            .amber-line {
-                margin: 1.5rem auto 2.5rem;
-                width: 100px;
-            }
-            
-            .transition-title {
-                font-size: 18px;
-            }
-            
-            .transition-text {
-                font-size: 15px;
-            }
-            
-            .launch-date {
-                font-size: 18px;
-                margin: 2rem 0 1.5rem;
-            }
-            
-            .mission-title {
-                font-size: 24px;
-                letter-spacing: 0.08em;
-                margin-bottom: 3rem;
-            }
-            
-            .mission-grid {
-                gap: 1.8rem;
-                max-width: 100%;
-            }
-            
-            .transition-box {
-                padding: 2rem 1.5rem;
-                max-width: 100%;
-            }
-            
-            .mission-item {
-                padding: 1.8rem 1.5rem;
-            }
-            
-            .cta-button {
-                padding: 12px 20px;
-                font-size: 14px;
-            }
-            
-            .scroll-indicator {
-                bottom: 1.5rem;
-                font-size: 10px;
-            }
-        }
-
-        @media (max-width: 320px) {
-            .page {
-                padding: 1rem 0.5rem;
-            }
-            
-            .logo-circles {
-                width: 80px;
-                height: 80px;
-            }
-            
-            .site-title {
-                font-size: 18px;
-            }
-            
-            .transition-box {
-                padding: 1.5rem 1rem;
-            }
-            
-            .mission-item {
-                padding: 1.5rem 1rem;
-            }
-        }
-
-        /* Scroll indicator */
-        .scroll-indicator {
-            position: absolute;
-            bottom: 2.5rem;
-            left: 50%;
-            transform: translateX(-50%);
-            background: var(--gradient-cool);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            opacity: 0.8;
-            z-index: 20;
-        }
-
-        .scroll-indicator:hover {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            opacity: 1;
-        }
-
-        .scroll-indicator::after {
-            content: '↓';
-            display: block;
-            margin-top: 0.8rem;
-            font-size: 14px;
-            animation: bounce 2s infinite;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0);
-                opacity: 0.8;
-            }
-            40% {
-                transform: translateY(-4px);
-                opacity: 1;
-            }
-            60% {
-                transform: translateY(-2px);
-                opacity: 0.9;
+            .cta-primary {
+                padding: 0.875rem 1.5rem;
+                font-size: 0.9rem;
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Page 1 - Transition -->
-    <section class="page page-1">
-        <div class="logo">
-            <div class="logo-circles">
-                <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="primaryGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1"/>
-                            <stop offset="50%" style="stop-color:#8b5cf6;stop-opacity:1"/>
-                            <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:1"/>
-                        </linearGradient>
-                        <linearGradient id="warmGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1"/>
-                            <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1"/>
-                        </linearGradient>
-                    </defs>
-                    <!-- Outer scope rings -->
-                    <circle cx="60" cy="60" r="55" fill="none" stroke="url(#primaryGradient)" stroke-width="1" opacity="0.3"/>
-                    <circle cx="60" cy="60" r="45" fill="none" stroke="url(#primaryGradient)" stroke-width="1.5" opacity="0.4"/>
-                    <circle cx="60" cy="60" r="35" fill="none" stroke="url(#primaryGradient)" stroke-width="1.5" opacity="0.6"/>
-                    <circle cx="60" cy="60" r="25" fill="none" stroke="url(#warmGradient)" stroke-width="2" opacity="0.8"/>
-                    <circle cx="60" cy="60" r="15" fill="none" stroke="url(#warmGradient)" stroke-width="2.5"/>
-                    <circle cx="60" cy="60" r="8" fill="none" stroke="url(#warmGradient)" stroke-width="1"/>
-                    <circle cx="60" cy="60" r="3" fill="url(#warmGradient)"/>
-                    
-                    <!-- Crosshairs -->
-                    <line x1="10" y1="60" x2="25" y2="60" stroke="url(#primaryGradient)" stroke-width="1.5" opacity="0.7"/>
-                    <line x1="95" y1="60" x2="110" y2="60" stroke="url(#primaryGradient)" stroke-width="1.5" opacity="0.7"/>
-                    <line x1="60" y1="10" x2="60" y2="25" stroke="url(#primaryGradient)" stroke-width="1.5" opacity="0.7"/>
-                    <line x1="60" y1="95" x2="60" y2="110" stroke="url(#primaryGradient)" stroke-width="1.5" opacity="0.7"/>
-                    
-                    <!-- Diagonal markers -->
-                    <line x1="25" y1="25" x2="35" y2="35" stroke="url(#primaryGradient)" stroke-width="1" opacity="0.5"/>
-                    <line x1="95" y1="25" x2="85" y2="35" stroke="url(#primaryGradient)" stroke-width="1" opacity="0.5"/>
-                    <line x1="25" y1="95" x2="35" y2="85" stroke="url(#primaryGradient)" stroke-width="1" opacity="0.5"/>
-                    <line x1="95" y1="95" x2="85" y2="85" stroke="url(#primaryGradient)" stroke-width="1" opacity="0.5"/>
-                    
-                    <!-- Range markers -->
-                    <rect x="58" y="5" width="4" height="8" fill="url(#primaryGradient)" opacity="0.6"/>
-                    <rect x="58" y="107" width="4" height="8" fill="url(#primaryGradient)" opacity="0.6"/>
-                    <rect x="5" y="58" width="8" height="4" fill="url(#primaryGradient)" opacity="0.6"/>
-                    <rect x="107" y="58" width="8" height="4" fill="url(#primaryGradient)" opacity="0.6"/>
-                </svg>
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+
+    <!-- Premium Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <div class="logo-mark">
+                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1"/>
+                                    <stop offset="100%" style="stop-color:#b8941f;stop-opacity:1"/>
+                                </linearGradient>
+                            </defs>
+                            <circle cx="24" cy="24" r="22" fill="none" stroke="url(#logoGradient)" stroke-width="1.5" opacity="0.4"/>
+                            <circle cx="24" cy="24" r="16" fill="none" stroke="url(#logoGradient)" stroke-width="1.5" opacity="0.6"/>
+                            <circle cx="24" cy="24" r="10" fill="none" stroke="url(#logoGradient)" stroke-width="2" opacity="0.8"/>
+                            <circle cx="24" cy="24" r="4" fill="url(#logoGradient)"/>
+                            <line x1="4" y1="24" x2="10" y2="24" stroke="url(#logoGradient)" stroke-width="2"/>
+                            <line x1="38" y1="24" x2="44" y2="24" stroke="url(#logoGradient)" stroke-width="2"/>
+                            <line x1="24" y1="4" x2="24" y2="10" stroke="url(#logoGradient)" stroke-width="2"/>
+                            <line x1="24" y1="38" x2="24" y2="44" stroke="url(#logoGradient)" stroke-width="2"/>
+                        </svg>
+                    </div>
+                    <div class="logo-text">Militia Spotlight</div>
+                </a>
+                <nav class="nav">
+                    <a href="#transition" class="nav-link">Transition</a>
+                    <a href="#mission" class="nav-link">Mission</a>
+                    <a href="#platform" class="nav-link">Current Platform</a>
+                </nav>
             </div>
-            <h1 class="site-title">MILITIA SPOTLIGHT</h1>
         </div>
-        
-        <div class="amber-line"></div>
-        
-        <div class="transition-box">
-            <h2 class="transition-title">TRANSITIONING TO A NEW HOME</h2>
-            <p class="transition-text">
-                Militia Spotlight is moving from The Washington Institute for Near East Policy to an independent platform.
-            </p>
-            <div class="launch-date">LAUNCHING SEPTEMBER 2025</div>
-            <p class="transition-text">
-                Our open-source intelligence on Iran-backed militias will continue at this new location.
-            </p>
-            <a href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" target="_blank" rel="noopener" class="cta-button">
-                Current Reports at Washington Institute →
-            </a>
-        </div>
-        
-        <div class="scroll-indicator" onclick="document.querySelector('.page-2').scrollIntoView()">
-            Mission
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <div class="status-dot"></div>
+                    Platform Migration in Progress
+                </div>
+                <h1 class="hero-title">Intelligence<br>Redefined</h1>
+                <p class="hero-subtitle">Independent OSINT Platform</p>
+                <p class="hero-description">
+                    Militia Spotlight is transitioning to an independent intelligence platform, 
+                    continuing our comprehensive analysis of Iran-backed militia networks with 
+                    enhanced capabilities and deeper investigative resources.
+                </p>
+                <a href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" target="_blank" rel="noopener" class="cta-primary">
+                    Access Current Reports
+                    <span class="cta-icon">→</span>
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- Page 2 - Mission -->
-    <section class="page page-2">
-        <h2 class="mission-title">Intelligence Mission</h2>
-        
-        <div class="mission-grid">
-            <div class="mission-item">
-                <h3>Understand</h3>
-                <p>Objectives and structure of Iran-backed militias</p>
+    <!-- Transition Section -->
+    <section class="transition" id="transition">
+        <div class="container">
+            <div class="transition-content">
+                <div>
+                    <div class="section-label">Platform Evolution</div>
+                    <h2 class="section-title">Moving to Independence</h2>
+                    <p class="section-text">
+                        After establishing credibility at The Washington Institute for Near East Policy, 
+                        Militia Spotlight is evolving into an independent intelligence platform to expand 
+                        our analytical capabilities and operational scope.
+                    </p>
+                    <div class="timeline">
+                        <div class="timeline-date">SEP 2025</div>
+                        <div class="timeline-line"></div>
+                    </div>
+                </div>
+                <div class="transition-info">
+                    <div class="section-label">Enhanced Capabilities</div>
+                    <h3 class="section-title">Next-Generation OSINT</h3>
+                    <p class="section-text">
+                        Our new independent platform will feature advanced analytical tools, 
+                        expanded geographic coverage, and enhanced data visualization capabilities 
+                        for comprehensive threat assessment.
+                    </p>
+                </div>
             </div>
-            
-            <div class="mission-item">
-                <h3>Expose</h3>
-                <p>Information operations and disinformation</p>
-            </div>
-            
-            <div class="mission-item">
-                <h3>Identify</h3>
-                <p>Linkages between groups and Iran</p>
-            </div>
-            
-            <div class="mission-item">
-                <h3>Deny</h3>
-                <p>Anonymity through documentation</p>
-            </div>
-        </div>
-        
-        <div class="current-location">
-            Currently at: <a href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" target="_blank" rel="noopener">washingtoninstitute.org/policy-analysis/series/militia-spotlight</a>
         </div>
     </section>
+
+    <!-- Mission Section -->
+    <section class="mission" id="mission">
+        <div class="container">
+            <div class="mission-header">
+                <div class="section-label">Core Objectives</div>
+                <h2 class="section-title">Intelligence Mission</h2>
+                <p class="section-text">
+                    Our platform provides comprehensive analysis through rigorous open-source 
+                    intelligence methodologies, supporting strategic decision-making with actionable insights.
+                </p>
+            </div>
+            
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                        </svg>
+                    </div>
+                    <h3 class="mission-title">Understand</h3>
+                    <p class="mission-description">
+                        Comprehensive analysis of objectives, structure, and operational patterns 
+                        of Iran-backed militias across multiple theaters.
+                    </p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3 class="mission-title">Expose</h3>
+                    <p class="mission-description">
+                        Reveal disinformation campaigns, propaganda networks, and information 
+                        warfare tactics employed across digital and traditional media.
+                    </p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
+                        </svg>
+                    </div>
+                    <h3 class="mission-title">Identify</h3>
+                    <p class="mission-description">
+                        Map organizational structures, leadership hierarchies, and command 
+                        relationships through comprehensive network analysis.
+                    </p>
+                </div>
+                
+                <div class="mission-card">
+                    <div class="mission-icon">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
+                        </svg>
+                    </div>
+                    <h3 class="mission-title">Inform</h3>
+                    <p class="mission-description">
+                        Provide actionable intelligence briefings and strategic assessments 
+                        to policymakers and security professionals.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="current-platform">
+                <p>Currently available at: <a href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" target="_blank" rel="noopener" class="platform-link">The Washington Institute for Near East Policy</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2025 Militia Spotlight | Independent Intelligence Platform</p>
+        </div>
+    </footer>
 
     <script>
-        // Smooth scrolling for scroll indicator
-        document.querySelector('.scroll-indicator').addEventListener('click', function() {
-            document.querySelector('.page-2').scrollIntoView({ behavior: 'smooth' });
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        let mouseX = 0, mouseY = 0;
+        let cursorX = 0, cursorY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        function animateCursor() {
+            const speed = 0.15;
+            cursorX += (mouseX - cursorX) * speed;
+            cursorY += (mouseY - cursorY) * speed;
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            requestAnimationFrame(animateCursor);
+        }
+        animateCursor();
+
+        // Cursor hover effects
+        const hoverElements = document.querySelectorAll('a, .mission-card');
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+        });
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                target.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                }
+            });
+        }, observerOptions);
+
+        // Observe animated elements
+        document.querySelectorAll('.mission-card').forEach(card => {
+            observer.observe(card);
         });
     </script>
 </body>
