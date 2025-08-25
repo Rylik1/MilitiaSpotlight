@@ -33,6 +33,8 @@
             color: var(--black);
             font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Arial, sans-serif;
             line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         .container {
@@ -61,20 +63,29 @@
 
         .brand-name {
             font-size: 15px;
-            letter-spacing: 0.08em;
+            letter-spacing: 0.12em;
             font-weight: 500;
             text-transform: none;
         }
 
         /* Main */
         .main {
-            padding: 96px 0 88px;
+            padding: 112px 0 96px;
+        }
+
+        .kicker {
+            font-size: 12px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--gray-500);
+            margin-bottom: 14px;
+            font-variant-numeric: proportional-nums;
         }
 
         .headline {
             font-family: "Libre Baskerville", Baskerville, Georgia, serif;
             font-weight: 400;
-            font-size: 48px;
+            font-size: 56px;
             line-height: 1.25;
             letter-spacing: 0.01em;
             max-width: 900px;
@@ -84,16 +95,17 @@
             background: #f5f5f5;
             border: 1px solid var(--gray-200);
             border-left: 4px solid var(--amber);
-            padding: 24px 28px;
-            margin-top: 28px;
+            padding: 28px 28px;
+            margin-top: 32px;
             max-width: 760px;
         }
 
         .notice-label {
             font-size: 12px;
-            letter-spacing: 0.12em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
+            font-variant-caps: all-small-caps;
         }
 
         .notice-text {
@@ -107,18 +119,29 @@
         }
 
         .primary-link {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             color: var(--black);
             text-decoration: none;
-            border: 1px solid var(--black);
-            padding: 10px 14px;
-            border-radius: 2px;
-            transition: background-color 0.15s ease, color 0.15s ease;
+            border-bottom: 1px solid var(--black);
+            padding-bottom: 2px;
+            transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
         }
 
         .primary-link:hover {
-            background: var(--black);
-            color: var(--white);
+            color: var(--black);
+            border-bottom-color: var(--amber);
+        }
+
+        .primary-link::after {
+            content: "\2192";
+            transform: translateX(0);
+            transition: transform 0.15s ease;
+        }
+
+        .primary-link:hover::after {
+            transform: translateX(2px);
         }
 
         /* Methodology */
@@ -143,6 +166,11 @@
             gap: 28px;
         }
 
+        .columns .col:not(:first-child) {
+            border-left: 1px solid var(--gray-200);
+            padding-left: 28px;
+        }
+
         .col h3 {
             font-size: 14px;
             letter-spacing: 0.08em;
@@ -152,6 +180,38 @@
         }
 
         .col p {
+            color: #333333;
+        }
+
+        /* Series Focus (from Washington Institute page) */
+        .series-focus {
+            margin-top: 48px;
+            padding-top: 28px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .series-focus h3 {
+            font-size: 14px;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+
+        .series-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .series-item h4 {
+            font-size: 12px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .series-item p {
             color: #333333;
         }
 
@@ -170,12 +230,14 @@
 
         /* Responsive */
         @media (max-width: 900px) {
-            .headline { font-size: 40px; }
+            .headline { font-size: 44px; }
         }
 
         @media (max-width: 700px) {
-            .headline { font-size: 32px; }
+            .headline { font-size: 34px; }
             .columns { grid-template-columns: 1fr; }
+            .columns .col { border-left: none; padding-left: 0; }
+            .series-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -203,6 +265,7 @@
     <!-- Main -->
     <main class="main">
         <div class="container">
+            <div class="kicker">Open-Source Intelligence Platform</div>
             <h1 class="headline">Independent Intelligence on Iranian Proxy Networks</h1>
             <div class="notice">
                 <div class="notice-label">Coming September 2025</div>
@@ -229,6 +292,28 @@
                 <div class="col">
                     <h3>Verification</h3>
                     <p>Cross-reference protocols</p>
+                </div>
+            </div>
+
+            <div class="series-focus">
+                <h3>Series Focus</h3>
+                <div class="series-grid">
+                    <div class="series-item">
+                        <h4>Understand</h4>
+                        <p>Objectives, structure, and activity of Iran-backed militias in Iraq and Syria.</p>
+                    </div>
+                    <div class="series-item">
+                        <h4>Expose</h4>
+                        <p>Militia information operations and disinformation campaigns.</p>
+                    </div>
+                    <div class="series-item">
+                        <h4>Identify</h4>
+                        <p>Linkages between groups and with Iran to increase accountability.</p>
+                    </div>
+                    <div class="series-item">
+                        <h4>Deny</h4>
+                        <p>Anonymity and deniability to Iran-backed militias.</p>
+                    </div>
                 </div>
             </div>
         </div>
