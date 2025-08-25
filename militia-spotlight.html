@@ -95,78 +95,7 @@
             animation: fadeIn 1.8s ease-out;
         }
 
-        .signup-section {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 40px;
-            margin-bottom: 40px;
-            backdrop-filter: blur(10px);
-            animation: fadeIn 2s ease-out;
-        }
-
-        .signup-title {
-            font-size: 1.3rem;
-            margin-bottom: 20px;
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        .signup-form {
-            display: flex;
-            gap: 15px;
-            max-width: 450px;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-
-        .email-input {
-            flex: 1;
-            min-width: 250px;
-            padding: 14px 20px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 8px;
-            color: #ffffff;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .email-input::placeholder {
-            color: #657786;
-        }
-
-        .email-input:focus {
-            outline: none;
-            border-color: rgba(255, 255, 255, 0.3);
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .submit-btn {
-            padding: 14px 35px;
-            background: linear-gradient(135deg, #c9302c 0%, #a02622 100%);
-            border: none;
-            border-radius: 8px;
-            color: white;
-            font-size: 1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            letter-spacing: 0.5px;
-        }
-
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(201, 48, 44, 0.3);
-            background: linear-gradient(135deg, #d9534f 0%, #c9302c 100%);
-        }
-
-        .submit-btn:active {
-            transform: translateY(0);
-        }
+        
 
         .launch-date {
             font-size: 1.1rem;
@@ -335,22 +264,7 @@
         
         <p class="previous-host">Previously hosted at The Washington Institute</p>
         
-        <div class="signup-section">
-            <h3 class="signup-title">Get Notified When We Launch</h3>
-            <form class="signup-form" id="signupForm">
-                <input 
-                    type="email" 
-                    class="email-input" 
-                    placeholder="Enter your email address" 
-                    required
-                    id="emailInput"
-                >
-                <button type="submit" class="submit-btn" id="submitBtn">
-                    Notify Me
-                </button>
-            </form>
-            <div id="messageContainer"></div>
-        </div>
+        
         
         <div class="launch-date">
             Expected Launch: <strong>September 2025</strong>
@@ -358,41 +272,6 @@
     </div>
 
     <script>
-        // Form handling
-        document.getElementById('signupForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const emailInput = document.getElementById('emailInput');
-            const submitBtn = document.getElementById('submitBtn');
-            const messageContainer = document.getElementById('messageContainer');
-            const email = emailInput.value;
-            
-            // Basic email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            if (!emailRegex.test(email)) {
-                messageContainer.innerHTML = '<p class="error-message">Please enter a valid email address</p>';
-                return;
-            }
-            
-            // Add loading state
-            submitBtn.classList.add('loading');
-            submitBtn.disabled = true;
-            
-            // Simulate form submission (replace with actual endpoint)
-            setTimeout(() => {
-                submitBtn.classList.remove('loading');
-                submitBtn.disabled = false;
-                messageContainer.innerHTML = '<p class="success-message">Thank you! We\'ll notify you when we launch.</p>';
-                emailInput.value = '';
-                
-                // Clear message after 5 seconds
-                setTimeout(() => {
-                    messageContainer.innerHTML = '';
-                }, 5000);
-            }, 1500);
-        });
-
         // Add parallax effect on mouse move
         document.addEventListener('mousemove', (e) => {
             const x = e.clientX / window.innerWidth;

@@ -596,8 +596,7 @@
             <div class="transition-notice">
                 Currently transitioning from <a href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" target="_blank">washingtoninstitute.org/policy-analysis/series/militia-spotlight</a>
             </div>
-            
-            <a href="#newsletter" class="cta-button">Get Launch Updates</a>
+
         </div>
     </section>
 
@@ -656,20 +655,7 @@
             <h2 class="section-title">Trusted Intelligence Platform</h2>
             <p class="credentials">Previously hosted at The Washington Institute for Near East Policy</p>
             <p class="launch-info">Launching September 2025</p>
-            
-            <form class="newsletter-form" id="newsletterForm">
-                <input 
-                    type="email" 
-                    class="newsletter-input" 
-                    id="emailInput"
-                    placeholder="Enter your email for launch notification" 
-                    required
-                >
-                <button type="submit" class="newsletter-button" id="submitButton">
-                    Notify Me When We Launch
-                </button>
-            </form>
-            <div id="formMessage"></div>
+
         </div>
     </section>
 
@@ -703,54 +689,7 @@
             lastScrollY = window.scrollY;
         });
 
-        // Newsletter form handling
-        document.getElementById('newsletterForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const emailInput = document.getElementById('emailInput');
-            const submitButton = document.getElementById('submitButton');
-            const messageContainer = document.getElementById('formMessage');
-            const email = emailInput.value.trim();
-            
-            // Email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            
-            if (!emailRegex.test(email)) {
-                showMessage('Please enter a valid email address', 'error');
-                return;
-            }
-            
-            // Loading state
-            submitButton.disabled = true;
-            submitButton.textContent = 'Processing...';
-            
-            // Simulate API call
-            setTimeout(() => {
-                submitButton.disabled = false;
-                submitButton.textContent = 'Get Updates';
-                showMessage('Success! You\'ll be notified when Militia Spotlight launches.', 'success');
-                emailInput.value = '';
-                
-                // Clear message after 5 seconds
-                setTimeout(() => {
-                    messageContainer.innerHTML = '';
-                }, 5000);
-            }, 1500);
-        });
-
-        function showMessage(text, type) {
-            const messageContainer = document.getElementById('formMessage');
-            const className = type === 'success' ? 'success-message' : 'error-message';
-            messageContainer.innerHTML = `<div class="form-message ${className}">${text}</div>`;
-        }
-
-        // Smooth scrolling for CTA button
-        document.querySelector('.cta-button').addEventListener('click', function(e) {
-            e.preventDefault();
-            document.querySelector('#newsletter').scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
+        
 
         // Parallax effect for mission cards
         window.addEventListener('scroll', () => {
