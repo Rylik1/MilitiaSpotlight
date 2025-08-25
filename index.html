@@ -771,34 +771,29 @@
 
         /* Enhanced Responsive Design */
         @media (max-width: 768px) {
+            .hero {
+                padding-top: 100px;
+            }
+
             .hero-title {
                 letter-spacing: 0.1em;
             }
 
             .section {
-                padding: 4rem 1rem;
+                padding: 5rem 1rem;
             }
 
             .mission-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .newsletter-input {
-                min-width: 100%;
-            }
-
-            .newsletter-button {
-                width: 100%;
+                gap: 2rem;
             }
         }
 
         @media (max-width: 480px) {
+            .hero {
+                padding-top: 80px;
+            }
+
             .logo-text {
                 font-size: 1.4rem;
                 letter-spacing: 0.1em;
@@ -806,6 +801,10 @@
 
             .coming-soon-banner {
                 padding: 2rem 1rem;
+            }
+
+            .section {
+                padding: 4rem 1rem;
             }
         }
 
