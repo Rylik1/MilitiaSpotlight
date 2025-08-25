@@ -6,20 +6,27 @@
     <title>Militia Spotlight — Premium OSINT Intelligence</title>
     <meta name="description" content="Independent intelligence on Iranian proxy networks. Minimalist, premium OSINT platform. Launching September 2025.">
 
-    <!-- Typography: Serif for headline, system sans for UI -->
+    <!-- Premium Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --white: #ffffff;
-            --black: #111111;
-            --amber: #d4a72c;
-            --gray-50: #fafafa;
-            --gray-200: #eaeaea;
+            --black: #0a0a0a;
+            --charcoal: #1a1a1a;
+            --amber: #c9a961;
+            --amber-light: #d4b370;
+            --gray-50: #fafbfc;
+            --gray-100: #f4f5f7;
+            --gray-200: #e5e7eb;
+            --gray-400: #9ca3af;
             --gray-500: #6b7280;
-            --max-width: 1040px;
+            --gray-600: #4b5563;
+            --max-width: 1200px;
+            --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.08);
+            --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
 
         * {
@@ -31,91 +38,117 @@
         body {
             background: var(--white);
             color: var(--black);
-            font-family: "Helvetica Neue", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.65;
+            font-weight: 400;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
         }
 
         .container {
             max-width: var(--max-width);
             margin: 0 auto;
-            padding: 0 24px;
+            padding: 0 32px;
         }
 
         /* Header */
         .site-header {
             background: var(--white);
-            padding: 56px 0 32px;
-            border-bottom: 1px solid #000000;
+            padding: 64px 0 40px;
+            border-bottom: 1px solid var(--black);
+            position: relative;
+        }
+
+        .site-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--amber) 50%, transparent 100%);
+            opacity: 0.6;
         }
 
         .brand {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 16px;
         }
 
         .brand-mark {
-            width: 28px;
-            height: 18px;
+            width: 32px;
+            height: 20px;
+            opacity: 0.9;
         }
 
         .brand-name {
-            font-size: 15px;
-            letter-spacing: 0.12em;
-            font-weight: 500;
-            text-transform: none;
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 18px;
+            letter-spacing: 0.08em;
+            font-weight: 600;
+            color: var(--black);
         }
 
         /* Main */
         .main {
-            padding: 112px 0 96px;
+            padding: 120px 0 100px;
         }
 
         .kicker {
-            font-size: 12px;
-            letter-spacing: 0.16em;
+            font-size: 13px;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            color: var(--gray-500);
-            margin-bottom: 14px;
-            font-variant-numeric: proportional-nums;
+            color: var(--amber);
+            margin-bottom: 20px;
+            font-weight: 500;
+            font-variant-caps: all-small-caps;
         }
 
         .headline {
-            font-family: "Libre Baskerville", Baskerville, Georgia, serif;
+            font-family: 'Crimson Text', Georgia, serif;
             font-weight: 400;
-            font-size: 56px;
-            line-height: 1.25;
-            letter-spacing: 0.01em;
-            max-width: 900px;
+            font-size: 64px;
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+            max-width: 950px;
+            color: var(--black);
+            margin-bottom: 8px;
         }
 
         .notice {
-            background: #f5f5f5;
+            background: var(--gray-50);
             border: 1px solid var(--gray-200);
-            border-left: 4px solid var(--amber);
-            padding: 28px 28px;
-            margin-top: 32px;
-            max-width: 760px;
+            border-left: 3px solid var(--amber);
+            padding: 32px 36px;
+            margin-top: 40px;
+            max-width: 800px;
+            box-shadow: var(--shadow-subtle);
+            border-radius: 2px;
         }
 
         .notice-label {
             font-size: 12px;
-            letter-spacing: 0.14em;
+            letter-spacing: 0.16em;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: var(--amber);
             font-variant-caps: all-small-caps;
         }
 
         .notice-text {
-            color: #333333;
-            margin-bottom: 12px;
+            color: var(--charcoal);
+            margin-bottom: 16px;
+            font-weight: 400;
+            line-height: 1.6;
         }
 
         .notice-subtle {
-            color: var(--gray-500);
-            margin-bottom: 14px;
+            color: var(--gray-600);
+            margin-bottom: 18px;
+            font-size: 15px;
         }
 
         .primary-link {
@@ -124,120 +157,209 @@
             gap: 8px;
             color: var(--black);
             text-decoration: none;
-            border-bottom: 1px solid var(--black);
-            padding-bottom: 2px;
-            transition: border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+            border-bottom: 1.5px solid var(--black);
+            padding-bottom: 3px;
+            font-weight: 500;
+            transition: all 0.2s cubic-bezier(0.23, 1, 0.320, 1);
         }
 
         .primary-link:hover {
             color: var(--black);
             border-bottom-color: var(--amber);
+            transform: translateY(-1px);
         }
 
         .primary-link::after {
-            content: "\2192";
+            content: "→";
+            font-size: 16px;
             transform: translateX(0);
-            transition: transform 0.15s ease;
+            transition: transform 0.2s cubic-bezier(0.23, 1, 0.320, 1);
         }
 
         .primary-link:hover::after {
-            transform: translateX(2px);
+            transform: translateX(3px);
         }
 
         /* Methodology */
         .methodology {
-            background: var(--gray-50);
-            padding: 80px 0 60px;
+            background: var(--gray-100);
+            padding: 96px 0 80px;
             border-top: 1px solid var(--gray-200);
             border-bottom: 1px solid var(--gray-200);
         }
 
         .methodology h2 {
-            font-size: 18px;
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 24px;
             font-weight: 600;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            margin-bottom: 28px;
+            letter-spacing: 0.04em;
+            color: var(--black);
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .methodology h2::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: var(--amber);
         }
 
         .columns {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 28px;
+            gap: 40px;
         }
 
         .columns .col:not(:first-child) {
             border-left: 1px solid var(--gray-200);
-            padding-left: 28px;
+            padding-left: 40px;
+        }
+
+        .col {
+            padding: 24px 0;
         }
 
         .col h3 {
-            font-size: 14px;
-            letter-spacing: 0.08em;
+            font-size: 15px;
+            letter-spacing: 0.06em;
             text-transform: uppercase;
-            margin-bottom: 6px;
+            margin-bottom: 12px;
             font-weight: 600;
+            color: var(--black);
+            font-variant-caps: all-small-caps;
         }
 
         .col p {
-            color: #333333;
+            color: var(--gray-600);
+            font-size: 15px;
+            line-height: 1.6;
         }
 
-        /* Series Focus (from Washington Institute page) */
+        /* Series Focus */
         .series-focus {
-            margin-top: 48px;
-            padding-top: 28px;
+            margin-top: 60px;
+            padding-top: 40px;
             border-top: 1px solid var(--gray-200);
         }
 
         .series-focus h3 {
-            font-size: 14px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            margin-bottom: 18px;
+            font-family: 'Crimson Text', Georgia, serif;
+            font-size: 20px;
+            letter-spacing: 0.02em;
+            margin-bottom: 32px;
             font-weight: 600;
+            color: var(--black);
+            position: relative;
+        }
+
+        .series-focus h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 1px;
+            background: var(--amber);
         }
 
         .series-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 24px;
+            gap: 32px;
+        }
+
+        .series-item {
+            padding: 20px 0;
         }
 
         .series-item h4 {
-            font-size: 12px;
-            letter-spacing: 0.16em;
+            font-size: 13px;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
-            margin-bottom: 6px;
+            margin-bottom: 10px;
+            font-weight: 600;
+            color: var(--amber);
+            font-variant-caps: all-small-caps;
         }
 
         .series-item p {
-            color: #333333;
+            color: var(--gray-600);
+            font-size: 14px;
+            line-height: 1.6;
         }
 
         /* Footer */
         .site-footer {
-            background: var(--gray-50);
-            padding: 18px 0 40px;
+            background: var(--black);
+            padding: 32px 0 48px;
+            border-top: 1px solid var(--black);
         }
 
         .legal {
             font-size: 12px;
-            color: var(--gray-500);
-            letter-spacing: 0.04em;
-            text-align: left;
+            color: var(--gray-400);
+            letter-spacing: 0.06em;
+            text-align: center;
+            font-weight: 300;
+        }
+
+        /* Premium Interactions */
+        .series-item,
+        .col {
+            transition: all 0.2s ease;
+        }
+
+        .series-item:hover {
+            transform: translateY(-2px);
+        }
+
+        .col:hover h3 {
+            color: var(--amber);
+            transition: color 0.2s ease;
         }
 
         /* Responsive */
-        @media (max-width: 900px) {
-            .headline { font-size: 44px; }
+        @media (max-width: 1024px) {
+            .container { padding: 0 24px; }
+            .headline { font-size: 52px; }
+            .main { padding: 100px 0 80px; }
         }
 
-        @media (max-width: 700px) {
-            .headline { font-size: 34px; }
-            .columns { grid-template-columns: 1fr; }
-            .columns .col { border-left: none; padding-left: 0; }
+        @media (max-width: 768px) {
+            .site-header { padding: 48px 0 32px; }
+            .headline { font-size: 42px; }
+            .main { padding: 80px 0 60px; }
+            .methodology { padding: 64px 0 48px; }
+            .columns { 
+                grid-template-columns: 1fr; 
+                gap: 24px;
+            }
+            .columns .col { 
+                border-left: none; 
+                padding-left: 0; 
+                padding: 16px 0;
+            }
+            .columns .col:not(:first-child) {
+                border-top: 1px solid var(--gray-200);
+                padding-top: 24px;
+            }
+            .series-grid { 
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .headline { font-size: 32px; }
             .series-grid { grid-template-columns: 1fr; }
+            .notice { 
+                padding: 24px; 
+                margin-top: 32px;
+            }
         }
     </style>
 </head>
@@ -247,15 +369,16 @@
     <header class="site-header">
         <div class="container">
             <div class="brand" aria-label="Militia Spotlight">
-                <!-- Simple dotted eye mark -->
-                <svg class="brand-mark" viewBox="0 0 56 36" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="8" cy="18" r="2" fill="#000"/>
-                    <circle cx="16" cy="12" r="2" fill="#000"/>
-                    <circle cx="16" cy="24" r="2" fill="#000"/>
-                    <circle cx="24" cy="18" r="3.5" fill="#000"/>
-                    <circle cx="32" cy="12" r="2" fill="#000"/>
-                    <circle cx="32" cy="24" r="2" fill="#000"/>
-                    <circle cx="40" cy="18" r="2" fill="#000"/>
+                <!-- Enhanced OSINT radar mark -->
+                <svg class="brand-mark" viewBox="0 0 64 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <circle cx="32" cy="20" r="18" fill="none" stroke="#c9a961" stroke-width="1" opacity="0.4"/>
+                    <circle cx="32" cy="20" r="12" fill="none" stroke="#0a0a0a" stroke-width="1"/>
+                    <circle cx="32" cy="20" r="6" fill="none" stroke="#c9a961" stroke-width="1.5"/>
+                    <circle cx="32" cy="20" r="2" fill="#c9a961"/>
+                    <line x1="14" y1="20" x2="22" y2="20" stroke="#0a0a0a" stroke-width="1"/>
+                    <line x1="42" y1="20" x2="50" y2="20" stroke="#0a0a0a" stroke-width="1"/>
+                    <line x1="32" y1="2" x2="32" y2="10" stroke="#0a0a0a" stroke-width="1"/>
+                    <line x1="32" y1="30" x2="32" y2="38" stroke="#0a0a0a" stroke-width="1"/>
                 </svg>
                 <div class="brand-name">Militia Spotlight</div>
             </div>
@@ -271,7 +394,7 @@
                 <div class="notice-label">Coming September 2025</div>
                 <p class="notice-text">Militia Spotlight is transitioning to an independent platform.</p>
                 <p class="notice-subtle">Currently available at:</p>
-                <a class="primary-link" href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" target="_blank" rel="noopener">View Current Reports at The Washington Institute →</a>
+                <a class="primary-link" href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" target="_blank" rel="noopener">View Current Reports at The Washington Institute</a>
             </div>
         </div>
     </main>
@@ -322,7 +445,7 @@
     <!-- Footer -->
     <footer class="site-footer">
         <div class="container">
-            <div class="legal">© 2025 | Professional Intelligence Services</div>
+            <div class="legal">© 2025 Militia Spotlight • Independent Intelligence Platform</div>
         </div>
     </footer>
 </body>
