@@ -3,30 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Militia Spotlight — Premium OSINT Intelligence</title>
-    <meta name="description" content="Independent intelligence on Iranian proxy networks. Minimalist, premium OSINT platform. Launching September 2025.">
-
-    <!-- Premium Typography -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+    <title>Militia Spotlight - Transitioning to Independent Platform</title>
+    <meta name="description" content="Militia Spotlight is transitioning from The Washington Institute to an independent platform. Launching September 2025.">
+    
     <style>
         :root {
-            --white: #ffffff;
-            --black: #0a0a0a;
             --charcoal: #1a1a1a;
-            --amber: #c9a961;
-            --amber-light: #d4b370;
-            --gray-50: #fafbfc;
-            --gray-100: #f4f5f7;
-            --gray-200: #e5e7eb;
-            --gray-400: #9ca3af;
-            --gray-500: #6b7280;
-            --gray-600: #4b5563;
-            --max-width: 1200px;
-            --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.08);
-            --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.1);
+            --darker: #0f0f0f;
+            --white: #ffffff;
+            --amber: #d4a72c;
+            --gray-light: #cccccc;
         }
 
         * {
@@ -35,418 +21,328 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background: var(--white);
-            color: var(--black);
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.65;
-            font-weight: 400;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--charcoal);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: var(--max-width);
-            margin: 0 auto;
-            padding: 0 32px;
-        }
-
-        /* Header */
-        .site-header {
-            background: var(--white);
-            padding: 64px 0 40px;
-            border-bottom: 1px solid var(--black);
-            position: relative;
-        }
-
-        .site-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: linear-gradient(90deg, transparent 0%, var(--amber) 50%, transparent 100%);
-            opacity: 0.6;
-        }
-
-        .brand {
+        .page {
+            height: 100vh;
             display: flex;
+            flex-direction: column;
+            justify-content: center;
             align-items: center;
-            gap: 16px;
+            padding: 2rem;
+            text-align: center;
         }
 
-        .brand-mark {
-            width: 32px;
-            height: 20px;
-            opacity: 0.9;
+        /* Page 1 - Transition */
+        .page-1 {
+            background: var(--charcoal);
         }
 
-        .brand-name {
-            font-family: 'Crimson Text', Georgia, serif;
-            font-size: 18px;
-            letter-spacing: 0.08em;
-            font-weight: 600;
-            color: var(--black);
+        .logo {
+            margin-bottom: 3rem;
         }
 
-        /* Main */
-        .main {
-            padding: 120px 0 100px;
-        }
-
-        .kicker {
-            font-size: 13px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            color: var(--amber);
-            margin-bottom: 20px;
-            font-weight: 500;
-            font-variant-caps: all-small-caps;
-        }
-
-        .headline {
-            font-family: 'Crimson Text', Georgia, serif;
-            font-weight: 400;
-            font-size: 64px;
-            line-height: 1.2;
-            letter-spacing: -0.01em;
-            max-width: 950px;
-            color: var(--black);
-            margin-bottom: 8px;
-        }
-
-        .notice {
-            background: var(--gray-50);
-            border: 1px solid var(--gray-200);
-            border-left: 3px solid var(--amber);
-            padding: 32px 36px;
-            margin-top: 40px;
-            max-width: 800px;
-            box-shadow: var(--shadow-subtle);
-            border-radius: 2px;
-        }
-
-        .notice-label {
-            font-size: 12px;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-            font-weight: 600;
-            color: var(--amber);
-            font-variant-caps: all-small-caps;
-        }
-
-        .notice-text {
-            color: var(--charcoal);
-            margin-bottom: 16px;
-            font-weight: 400;
-            line-height: 1.6;
-        }
-
-        .notice-subtle {
-            color: var(--gray-600);
-            margin-bottom: 18px;
-            font-size: 15px;
-        }
-
-        .primary-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: var(--black);
-            text-decoration: none;
-            border-bottom: 1.5px solid var(--black);
-            padding-bottom: 3px;
-            font-weight: 500;
-            transition: all 0.2s cubic-bezier(0.23, 1, 0.320, 1);
-        }
-
-        .primary-link:hover {
-            color: var(--black);
-            border-bottom-color: var(--amber);
-            transform: translateY(-1px);
-        }
-
-        .primary-link::after {
-            content: "→";
-            font-size: 16px;
-            transform: translateX(0);
-            transition: transform 0.2s cubic-bezier(0.23, 1, 0.320, 1);
-        }
-
-        .primary-link:hover::after {
-            transform: translateX(3px);
-        }
-
-        /* Methodology */
-        .methodology {
-            background: var(--gray-100);
-            padding: 96px 0 80px;
-            border-top: 1px solid var(--gray-200);
-            border-bottom: 1px solid var(--gray-200);
-        }
-
-        .methodology h2 {
-            font-family: 'Crimson Text', Georgia, serif;
-            font-size: 24px;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-            color: var(--black);
-            margin-bottom: 40px;
+        .logo-circles {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1rem;
             position: relative;
         }
 
-        .methodology h2::after {
-            content: '';
-            position: absolute;
-            bottom: -12px;
-            left: 0;
-            width: 60px;
+        .logo-circles svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .site-title {
+            font-size: 24px;
+            font-weight: 300;
+            letter-spacing: 0.2em;
+            color: var(--white);
+            margin-bottom: 2rem;
+        }
+
+        .amber-line {
+            width: 100px;
             height: 2px;
             background: var(--amber);
+            margin: 0 auto 4rem;
         }
 
-        .columns {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 40px;
+        .transition-box {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--amber);
+            border-left: 4px solid var(--amber);
+            padding: 3rem 2.5rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .columns .col:not(:first-child) {
-            border-left: 1px solid var(--gray-200);
-            padding-left: 40px;
-        }
-
-        .col {
-            padding: 24px 0;
-        }
-
-        .col h3 {
-            font-size: 15px;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            margin-bottom: 12px;
+        .transition-title {
+            font-size: 28px;
             font-weight: 600;
-            color: var(--black);
-            font-variant-caps: all-small-caps;
+            color: var(--amber);
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.05em;
         }
 
-        .col p {
-            color: var(--gray-600);
-            font-size: 15px;
-            line-height: 1.6;
+        .transition-text {
+            font-size: 18px;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            color: var(--gray-light);
         }
 
-        /* Series Focus */
-        .series-focus {
-            margin-top: 60px;
-            padding-top: 40px;
-            border-top: 1px solid var(--gray-200);
-        }
-
-        .series-focus h3 {
-            font-family: 'Crimson Text', Georgia, serif;
+        .launch-date {
             font-size: 20px;
-            letter-spacing: 0.02em;
-            margin-bottom: 32px;
             font-weight: 600;
-            color: var(--black);
-            position: relative;
+            color: var(--white);
+            margin: 2rem 0 1.5rem;
         }
 
-        .series-focus h3::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 0;
-            width: 40px;
-            height: 1px;
+        .cta-button {
+            display: inline-block;
+            background: transparent;
+            color: var(--amber);
+            text-decoration: none;
+            border: 2px solid var(--amber);
+            padding: 12px 24px;
+            margin-top: 2rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .cta-button:hover {
             background: var(--amber);
+            color: var(--charcoal);
         }
 
-        .series-grid {
+        /* Page 2 - Mission */
+        .page-2 {
+            background: var(--darker);
+        }
+
+        .mission-title {
+            font-size: 32px;
+            font-weight: 300;
+            letter-spacing: 0.1em;
+            margin-bottom: 4rem;
+            color: var(--white);
+        }
+
+        .mission-grid {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 32px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto 4rem;
         }
 
-        .series-item {
-            padding: 20px 0;
+        .mission-item {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-left: 3px solid var(--amber);
+            padding: 2rem;
+            text-align: left;
         }
 
-        .series-item h4 {
-            font-size: 13px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            margin-bottom: 10px;
+        .mission-item h3 {
+            font-size: 18px;
             font-weight: 600;
             color: var(--amber);
-            font-variant-caps: all-small-caps;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        .series-item p {
-            color: var(--gray-600);
-            font-size: 14px;
+        .mission-item p {
+            color: var(--gray-light);
+            font-size: 16px;
             line-height: 1.6;
         }
 
-        /* Footer */
-        .site-footer {
-            background: var(--black);
-            padding: 32px 0 48px;
-            border-top: 1px solid var(--black);
+        .current-location {
+            font-size: 14px;
+            color: var(--gray-light);
+            margin-top: 2rem;
         }
 
-        .legal {
-            font-size: 12px;
-            color: var(--gray-400);
-            letter-spacing: 0.06em;
-            text-align: center;
-            font-weight: 300;
-        }
-
-        /* Premium Interactions */
-        .series-item,
-        .col {
-            transition: all 0.2s ease;
-        }
-
-        .series-item:hover {
-            transform: translateY(-2px);
-        }
-
-        .col:hover h3 {
+        .current-location a {
             color: var(--amber);
-            transition: color 0.2s ease;
+            text-decoration: none;
+        }
+
+        .current-location a:hover {
+            text-decoration: underline;
         }
 
         /* Responsive */
-        @media (max-width: 1024px) {
-            .container { padding: 0 24px; }
-            .headline { font-size: 52px; }
-            .main { padding: 100px 0 80px; }
-        }
-
         @media (max-width: 768px) {
-            .site-header { padding: 48px 0 32px; }
-            .headline { font-size: 42px; }
-            .main { padding: 80px 0 60px; }
-            .methodology { padding: 64px 0 48px; }
-            .columns { 
-                grid-template-columns: 1fr; 
-                gap: 24px;
+            .site-title {
+                font-size: 20px;
+                letter-spacing: 0.15em;
             }
-            .columns .col { 
-                border-left: none; 
-                padding-left: 0; 
-                padding: 16px 0;
+            
+            .transition-title {
+                font-size: 24px;
             }
-            .columns .col:not(:first-child) {
-                border-top: 1px solid var(--gray-200);
-                padding-top: 24px;
+            
+            .transition-text {
+                font-size: 16px;
             }
-            .series-grid { 
-                grid-template-columns: repeat(2, 1fr);
-                gap: 24px;
+            
+            .mission-title {
+                font-size: 28px;
+            }
+            
+            .mission-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .transition-box {
+                padding: 2rem 1.5rem;
             }
         }
 
         @media (max-width: 480px) {
-            .headline { font-size: 32px; }
-            .series-grid { grid-template-columns: 1fr; }
-            .notice { 
-                padding: 24px; 
-                margin-top: 32px;
+            .page {
+                padding: 1rem;
+            }
+            
+            .site-title {
+                font-size: 18px;
+            }
+            
+            .transition-title {
+                font-size: 20px;
+            }
+            
+            .mission-title {
+                font-size: 24px;
+            }
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: var(--amber);
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+        }
+
+        .scroll-indicator::after {
+            content: '↓';
+            display: block;
+            margin-top: 0.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-5px);
+            }
+            60% {
+                transform: translateY(-3px);
             }
         }
     </style>
 </head>
 
 <body>
-    <!-- Header -->
-    <header class="site-header">
-        <div class="container">
-            <div class="brand" aria-label="Militia Spotlight">
-                <!-- Enhanced OSINT radar mark -->
-                <svg class="brand-mark" viewBox="0 0 64 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <circle cx="32" cy="20" r="18" fill="none" stroke="#c9a961" stroke-width="1" opacity="0.4"/>
-                    <circle cx="32" cy="20" r="12" fill="none" stroke="#0a0a0a" stroke-width="1"/>
-                    <circle cx="32" cy="20" r="6" fill="none" stroke="#c9a961" stroke-width="1.5"/>
-                    <circle cx="32" cy="20" r="2" fill="#c9a961"/>
-                    <line x1="14" y1="20" x2="22" y2="20" stroke="#0a0a0a" stroke-width="1"/>
-                    <line x1="42" y1="20" x2="50" y2="20" stroke="#0a0a0a" stroke-width="1"/>
-                    <line x1="32" y1="2" x2="32" y2="10" stroke="#0a0a0a" stroke-width="1"/>
-                    <line x1="32" y1="30" x2="32" y2="38" stroke="#0a0a0a" stroke-width="1"/>
+    <!-- Page 1 - Transition -->
+    <section class="page page-1">
+        <div class="logo">
+            <div class="logo-circles">
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="45" fill="none" stroke="#d4a72c" stroke-width="2" opacity="0.6"/>
+                    <circle cx="50" cy="50" r="30" fill="none" stroke="#d4a72c" stroke-width="2" opacity="0.8"/>
+                    <circle cx="50" cy="50" r="15" fill="none" stroke="#d4a72c" stroke-width="3"/>
+                    <circle cx="50" cy="50" r="3" fill="#d4a72c"/>
+                    <line x1="5" y1="50" x2="20" y2="50" stroke="#d4a72c" stroke-width="2"/>
+                    <line x1="80" y1="50" x2="95" y2="50" stroke="#d4a72c" stroke-width="2"/>
+                    <line x1="50" y1="5" x2="50" y2="20" stroke="#d4a72c" stroke-width="2"/>
+                    <line x1="50" y1="80" x2="50" y2="95" stroke="#d4a72c" stroke-width="2"/>
                 </svg>
-                <div class="brand-name">Militia Spotlight</div>
             </div>
+            <h1 class="site-title">MILITIA SPOTLIGHT</h1>
         </div>
-    </header>
-
-    <!-- Main -->
-    <main class="main">
-        <div class="container">
-            <div class="kicker">Open-Source Intelligence Platform</div>
-            <h1 class="headline">Independent Intelligence on Iranian Proxy Networks</h1>
-            <div class="notice">
-                <div class="notice-label">Coming September 2025</div>
-                <p class="notice-text">Militia Spotlight is transitioning to an independent platform.</p>
-                <p class="notice-subtle">Currently available at:</p>
-                <a class="primary-link" href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" target="_blank" rel="noopener">View Current Reports at The Washington Institute</a>
-            </div>
+        
+        <div class="amber-line"></div>
+        
+        <div class="transition-box">
+            <h2 class="transition-title">TRANSITIONING TO A NEW HOME</h2>
+            <p class="transition-text">
+                Militia Spotlight is moving from The Washington Institute for Near East Policy to an independent platform.
+            </p>
+            <div class="launch-date">LAUNCHING SEPTEMBER 2025</div>
+            <p class="transition-text">
+                Our open-source intelligence on Iran-backed militias will continue at this new location.
+            </p>
+            <a href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" target="_blank" rel="noopener" class="cta-button">
+                Current Reports at Washington Institute →
+            </a>
         </div>
-    </main>
-
-    <!-- Methodology -->
-    <section class="methodology">
-        <div class="container">
-            <h2>Open-Source Intelligence Methodology</h2>
-            <div class="columns">
-                <div class="col">
-                    <h3>Collection</h3>
-                    <p>Multi-source data gathering</p>
-                </div>
-                <div class="col">
-                    <h3>Analysis</h3>
-                    <p>Pattern recognition systems</p>
-                </div>
-                <div class="col">
-                    <h3>Verification</h3>
-                    <p>Cross-reference protocols</p>
-                </div>
-            </div>
-
-            <div class="series-focus">
-                <h3>Series Focus</h3>
-                <div class="series-grid">
-                    <div class="series-item">
-                        <h4>Understand</h4>
-                        <p>Objectives, structure, and activity of Iran-backed militias in Iraq and Syria.</p>
-                    </div>
-                    <div class="series-item">
-                        <h4>Expose</h4>
-                        <p>Militia information operations and disinformation campaigns.</p>
-                    </div>
-                    <div class="series-item">
-                        <h4>Identify</h4>
-                        <p>Linkages between groups and with Iran to increase accountability.</p>
-                    </div>
-                    <div class="series-item">
-                        <h4>Deny</h4>
-                        <p>Anonymity and deniability to Iran-backed militias.</p>
-                    </div>
-                </div>
-            </div>
+        
+        <div class="scroll-indicator" onclick="document.querySelector('.page-2').scrollIntoView()">
+            Mission
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="site-footer">
-        <div class="container">
-            <div class="legal">© 2025 Militia Spotlight • Independent Intelligence Platform</div>
+    <!-- Page 2 - Mission -->
+    <section class="page page-2">
+        <h2 class="mission-title">Intelligence Mission</h2>
+        
+        <div class="mission-grid">
+            <div class="mission-item">
+                <h3>Understand</h3>
+                <p>Objectives and structure of Iran-backed militias</p>
+            </div>
+            
+            <div class="mission-item">
+                <h3>Expose</h3>
+                <p>Information operations and disinformation</p>
+            </div>
+            
+            <div class="mission-item">
+                <h3>Identify</h3>
+                <p>Linkages between groups and Iran</p>
+            </div>
+            
+            <div class="mission-item">
+                <h3>Deny</h3>
+                <p>Anonymity through documentation</p>
+            </div>
         </div>
-    </footer>
+        
+        <div class="current-location">
+            Currently at: <a href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" target="_blank" rel="noopener">washingtoninstitute.org/policy-analysis/series/militia-spotlight</a>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scrolling for scroll indicator
+        document.querySelector('.scroll-indicator').addEventListener('click', function() {
+            document.querySelector('.page-2').scrollIntoView({ behavior: 'smooth' });
+        });
+    </script>
 </body>
 </html>
