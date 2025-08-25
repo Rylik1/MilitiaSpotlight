@@ -16,6 +16,8 @@
             --gray-medium: #64748b;
             --red-accent: #dc2626;
             --green-success: #059669;
+            --orange-accent: #f59e0b;
+            --yellow-accent: #fbbf24;
         }
 
         * {
@@ -211,10 +213,28 @@
         .hero-subtext {
             font-size: 1.1rem;
             color: var(--gray-medium);
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+        }
+
+        .transition-notice {
+            background: rgba(59, 130, 246, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 8px;
+            padding: 1rem 1.5rem;
+            margin: 1.5rem auto 2rem;
+            max-width: 600px;
+            font-size: 0.95rem;
+            color: var(--blue-light);
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .transition-notice a {
+            color: var(--white);
+            text-decoration: underline;
         }
 
         .cta-button {
@@ -235,6 +255,50 @@
             transform: translateY(-2px);
             box-shadow: 0 10px 30px rgba(59, 130, 246, 0.4);
             border-color: var(--blue-light);
+        }
+
+        /* Coming Soon Banner */
+        .coming-soon-banner {
+            background: linear-gradient(135deg, var(--orange-accent), var(--yellow-accent));
+            color: var(--navy-deep);
+            text-align: center;
+            padding: 2rem 1rem;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 4px 20px rgba(245, 158, 11, 0.3);
+        }
+
+        .coming-soon-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
+        }
+
+        .banner-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .banner-subtitle {
+            font-size: 1.1rem;
+            font-weight: 600;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         /* Section Styling */
@@ -260,41 +324,42 @@
             background-clip: text;
         }
 
-        /* Mission Section */
+        /* Mission Section - Simplified */
         .mission-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
 
         .mission-card {
-            background: rgba(59, 130, 246, 0.05);
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            border-radius: 12px;
-            padding: 2rem;
+            background: rgba(59, 130, 246, 0.03);
+            border: 1px solid rgba(59, 130, 246, 0.15);
+            border-radius: 8px;
+            padding: 1.5rem;
             text-align: center;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(5px);
         }
 
         .mission-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--blue-electric);
-            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.2);
+            transform: translateY(-3px);
+            border-color: rgba(59, 130, 246, 0.3);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
         }
 
         .mission-icon {
-            width: 60px;
-            height: 60px;
-            margin: 0 auto 1rem;
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 0.75rem;
             fill: var(--blue-electric);
+            opacity: 0.8;
         }
 
         .mission-card h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.75rem;
             color: var(--blue-light);
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -302,72 +367,10 @@
 
         .mission-card p {
             color: var(--gray-medium);
-            line-height: 1.6;
-        }
-
-        /* Features Section */
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-
-        .feature-card {
-            background: linear-gradient(135deg, rgba(26, 35, 50, 0.8), rgba(44, 62, 80, 0.8));
-            border: 1px solid rgba(59, 130, 246, 0.2);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .feature-card:hover::before {
-            left: 100%;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--blue-electric);
-            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.3);
-        }
-
-        .feature-card h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--white);
-        }
-
-        .feature-card p {
-            color: var(--gray-medium);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
-        }
-
-        .feature-status {
-            display: inline-block;
-            padding: 0.5rem 1rem;
-            background: rgba(59, 130, 246, 0.2);
-            color: var(--blue-light);
-            border-radius: 20px;
+            line-height: 1.5;
             font-size: 0.9rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
         }
+
 
         /* Credibility Section */
         .credibility {
@@ -478,8 +481,7 @@
                 padding: 3rem 1rem;
             }
 
-            .mission-grid,
-            .features-grid {
+            .mission-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -590,7 +592,20 @@
             <h1 class="hero-title">MILITIA SPOTLIGHT</h1>
             <p class="hero-tagline">Tracking Iran-Backed Militias Through Open-Source Intelligence</p>
             <p class="hero-subtext">Exposing Networks • Analyzing Operations • Informing Policy</p>
-            <a href="#newsletter" class="cta-button">Get Intelligence Updates</a>
+            
+            <div class="transition-notice">
+                Currently transitioning from <a href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" target="_blank">washingtoninstitute.org/policy-analysis/series/militia-spotlight</a>
+            </div>
+            
+            <a href="#newsletter" class="cta-button">Get Launch Updates</a>
+        </div>
+    </section>
+
+    <!-- Coming Soon Banner -->
+    <section class="coming-soon-banner">
+        <div class="container">
+            <h2 class="banner-title">Coming September 2025</h2>
+            <p class="banner-subtitle">Militia Spotlight is migrating from The Washington Institute to its new independent home</p>
         </div>
     </section>
 
@@ -634,37 +649,6 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="section">
-        <div class="container">
-            <h2 class="section-title">What to Expect</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <h3>Daily Intelligence Briefings</h3>
-                    <p>Comprehensive daily reports analyzing militia activities, Iranian influence operations, and regional security developments with expert commentary.</p>
-                    <span class="feature-status">Coming Soon</span>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>Interactive Network Maps</h3>
-                    <p>Dynamic visualization tools mapping militia organizational structures, command hierarchies, and operational territories across the region.</p>
-                    <span class="feature-status">In Development</span>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>Threat Assessment Reports</h3>
-                    <p>In-depth analytical reports on emerging threats, capability assessments, and strategic implications of militia activities.</p>
-                    <span class="feature-status">Coming Soon</span>
-                </div>
-                
-                <div class="feature-card">
-                    <h3>Field Research Analysis</h3>
-                    <p>Expert analysis from regional specialists and field researchers providing ground-truth perspectives on militia operations.</p>
-                    <span class="feature-status">Launch Ready</span>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Credibility Section -->
     <section class="section credibility" id="newsletter">
@@ -678,11 +662,11 @@
                     type="email" 
                     class="newsletter-input" 
                     id="emailInput"
-                    placeholder="Enter your email for intelligence updates" 
+                    placeholder="Enter your email for launch notification" 
                     required
                 >
                 <button type="submit" class="newsletter-button" id="submitButton">
-                    Get Updates
+                    Notify Me When We Launch
                 </button>
             </form>
             <div id="formMessage"></div>
@@ -744,7 +728,7 @@
             setTimeout(() => {
                 submitButton.disabled = false;
                 submitButton.textContent = 'Get Updates';
-                showMessage('Success! You\'ll receive intelligence updates when we launch.', 'success');
+                showMessage('Success! You\'ll be notified when Militia Spotlight launches.', 'success');
                 emailInput.value = '';
                 
                 // Clear message after 5 seconds
