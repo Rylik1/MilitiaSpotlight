@@ -249,7 +249,7 @@
         .hero-logo {
             width: 160px;
             height: 160px;
-            margin: 0 auto 3rem;
+            margin: 4rem auto 3rem;
             position: relative;
             animation: logoEntrance 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
         }
@@ -518,7 +518,7 @@
 
         /* Enhanced Mission Section */
         .section {
-            padding: 6rem 2rem;
+            padding: 10rem 2rem;
             position: relative;
             z-index: 10;
         }
@@ -556,8 +556,10 @@
         .mission-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 4rem;
+            margin-top: 4rem;
+            position: relative;
+            z-index: 5;
         }
 
         .mission-card {
@@ -570,6 +572,8 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
+            margin-bottom: 3rem;
+            z-index: 1;
         }
 
         .mission-card::before {
@@ -954,8 +958,6 @@
             <div class="transition-notice">
                 Currently transitioning from <a href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" target="_blank">washingtoninstitute.org/policy-analysis/series/militia-spotlight</a>
             </div>
-            
-            <a href="#newsletter" class="cta-button">Get Launch Updates</a>
         </div>
     </section>
 
@@ -1008,25 +1010,11 @@
     </section>
 
     <!-- Credibility Section -->
-    <section class="section credibility" id="newsletter">
+    <section class="section credibility">
         <div class="container">
             <h2 class="section-title">Trusted Intelligence Platform</h2>
             <p class="credentials">Previously hosted at The Washington Institute for Near East Policy</p>
             <p class="launch-info">Launching September 2025</p>
-            
-            <form class="newsletter-form" id="newsletterForm">
-                <input 
-                    type="email" 
-                    class="newsletter-input" 
-                    id="emailInput"
-                    placeholder="Enter your email for launch notification" 
-                    required
-                >
-                <button type="submit" class="newsletter-button" id="submitButton">
-                    Notify Me When We Launch
-                </button>
-            </form>
-            <div id="formMessage"></div>
         </div>
     </section>
 
