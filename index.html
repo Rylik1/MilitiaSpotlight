@@ -15,39 +15,40 @@
         :root {
             /* Premium Color System */
             --black-void: #000000;
-            --black-rich: #0d0d0d;
-            --black-soft: #1a1a1a;
-            --gray-obsidian: #1e1e1e;
-            --gray-charcoal: #2d2d30;
-            --gray-slate: #404040;
+            --black-rich: #0a0a0f;
+            --black-soft: #12121a;
+            --gray-obsidian: #1e1e2e;
+            --gray-charcoal: #2d2d3a;
+            --gray-slate: #404055;
             --gray-storm: #6b7280;
             --gray-silver: #9ca3af;
             --white-pure: #ffffff;
             --white-pearl: #f8fafc;
             
             /* Luxury Accent Palette */
-            --gold-primary: #d4af37;
-            --gold-light: #e8c547;
-            --gold-dark: #b8941f;
-            --copper: #b87333;
-            --platinum: #e5e4e2;
+            --purple-primary: #6d28d9;
+            --purple-light: #8b5cf6;
+            --purple-dark: #4c1d95;
+            --blue-deep: #1e3a8a;
+            --blue-primary: #2563eb;
+            --blue-light: #3b82f6;
             --emerald: #10b981;
             --sapphire: #3b82f6;
             --ruby: #ef4444;
             
             /* Premium Gradients */
-            --gradient-luxury: linear-gradient(135deg, #d4af37 0%, #b8941f 50%, #8b7355 100%);
-            --gradient-night: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #2d2d30 100%);
-            --gradient-glass: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-            --gradient-glow: radial-gradient(circle at center, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+            --gradient-luxury: linear-gradient(135deg, #1e3a8a 0%, #2563eb 25%, #6d28d9 75%, #4c1d95 100%);
+            --gradient-night: linear-gradient(135deg, #0a0a0f 0%, #12121a 50%, #1e1e2e 100%);
+            --gradient-glass: linear-gradient(135deg, rgba(109,40,217,0.1) 0%, rgba(37,99,235,0.05) 100%);
+            --gradient-glow: radial-gradient(circle at center, rgba(109, 40, 217, 0.15) 0%, transparent 70%);
             
             /* Professional Shadows */
             --shadow-ambient: 0 1px 3px rgba(0,0,0,0.1);
             --shadow-elevated: 0 4px 12px rgba(0,0,0,0.15);
             --shadow-floating: 0 8px 32px rgba(0,0,0,0.12);
             --shadow-dramatic: 0 20px 60px rgba(0,0,0,0.4);
-            --shadow-luxury: 0 4px 20px rgba(212, 175, 55, 0.25);
-            --glow-gold: 0 0 30px rgba(212, 175, 55, 0.3);
+            --shadow-luxury: 0 4px 20px rgba(109, 40, 217, 0.25);
+            --glow-purple: 0 0 30px rgba(109, 40, 217, 0.3);
             
             /* Layout Constants */
             --container-max: 1400px;
@@ -92,7 +93,7 @@
             position: fixed;
             width: 12px;
             height: 12px;
-            background: var(--gold-primary);
+            background: var(--purple-light);
             border-radius: 50%;
             pointer-events: none;
             z-index: 9999;
@@ -119,7 +120,7 @@
             z-index: 1000;
             background: rgba(0, 0, 0, 0.95);
             backdrop-filter: blur(20px);
-            border-bottom: var(--border-width) solid rgba(212, 175, 55, 0.1);
+            border-bottom: var(--border-width) solid rgba(109, 40, 217, 0.1);
         }
 
         .header-content {
@@ -179,7 +180,7 @@
         }
 
         .nav-link:hover {
-            color: var(--gold-primary);
+            color: var(--purple-light);
         }
 
         .nav-link:hover::after {
@@ -193,7 +194,7 @@
             align-items: center;
             position: relative;
             padding: var(--section-padding) 0;
-            background: var(--gradient-night);
+            background: linear-gradient(135deg, #0a0a0f 0%, #12121a 25%, #1e1e2e 50%, #2d2d3a 100%);
         }
 
         .hero::before {
@@ -217,14 +218,14 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: rgba(212, 175, 55, 0.1);
-            border: var(--border-width) solid rgba(212, 175, 55, 0.2);
+            background: rgba(109, 40, 217, 0.1);
+            border: var(--border-width) solid rgba(109, 40, 217, 0.2);
             padding: 0.75rem 1.5rem;
             border-radius: 50px;
             margin-bottom: 2rem;
             font-size: 0.85rem;
             font-weight: 500;
-            color: var(--gold-primary);
+            color: var(--purple-light);
             letter-spacing: 0.02em;
             animation: fadeInUp 0.8s var(--ease-luxury);
         }
@@ -310,7 +311,7 @@
 
         .cta-primary:hover {
             transform: translateY(-2px);
-            box-shadow: var(--glow-gold);
+            box-shadow: var(--glow-purple);
         }
 
         .cta-icon {
@@ -336,7 +337,7 @@
             left: 0;
             right: 0;
             height: 1px;
-            background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
+            background: linear-gradient(90deg, transparent, var(--purple-primary), transparent);
             opacity: 0.3;
         }
 
@@ -360,7 +361,7 @@
             font-family: 'JetBrains Mono', monospace;
             font-size: 0.75rem;
             font-weight: 600;
-            color: var(--gold-primary);
+            color: var(--purple-light);
             text-transform: uppercase;
             letter-spacing: 0.15em;
             margin-bottom: 1rem;
@@ -393,7 +394,7 @@
             font-family: 'JetBrains Mono', monospace;
             font-size: 1.25rem;
             font-weight: 600;
-            color: var(--gold-primary);
+            color: var(--purple-light);
         }
 
         .timeline-line {
@@ -446,7 +447,7 @@
 
         .mission-card:hover {
             transform: translateY(-8px);
-            border-color: rgba(212, 175, 55, 0.3);
+            border-color: rgba(109, 40, 217, 0.3);
             box-shadow: var(--shadow-dramatic);
         }
 
@@ -495,20 +496,20 @@
         .current-platform {
             text-align: center;
             padding: 2rem;
-            background: rgba(212, 175, 55, 0.05);
-            border: var(--border-width) solid rgba(212, 175, 55, 0.2);
+            background: rgba(109, 40, 217, 0.05);
+            border: var(--border-width) solid rgba(109, 40, 217, 0.2);
             border-radius: var(--element-radius);
         }
 
         .platform-link {
-            color: var(--gold-primary);
+            color: var(--purple-light);
             text-decoration: none;
             font-weight: 600;
             transition: color 0.3s var(--ease-smooth);
         }
 
         .platform-link:hover {
-            color: var(--gold-light);
+            color: var(--purple-primary);
         }
 
         /* Footer */
@@ -613,8 +614,8 @@
                         <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                             <defs>
                                 <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#d4af37;stop-opacity:1"/>
-                                    <stop offset="100%" style="stop-color:#b8941f;stop-opacity:1"/>
+                                    <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1"/>
+                                    <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:1"/>
                                 </linearGradient>
                             </defs>
                             <circle cx="24" cy="24" r="22" fill="none" stroke="url(#logoGradient)" stroke-width="1.5" opacity="0.4"/>
@@ -646,7 +647,7 @@
                     <div class="status-dot"></div>
                     Platform Migration in Progress
                 </div>
-                <h1 class="hero-title">Intelligence<br>Redefined</h1>
+                <h1 class="hero-title">Strategic<br>Insights</h1>
                 <p class="hero-subtitle">Independent OSINT Platform</p>
                 <p class="hero-description">
                     Militia Spotlight is transitioning to an independent intelligence platform, 
