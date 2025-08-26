@@ -3,817 +3,471 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Militia Spotlight — Premium Intelligence Platform</title>
-    <meta name="description" content="An independent intelligence platform transitioning from The Washington Institute. Launching September 2025.">
+    <title>Militia Spotlight - Platform Transition</title>
+    <meta name="description" content="Militia Spotlight is transitioning to an independent intelligence platform. Continue reading at The Washington Institute.">
     
-    <!-- Premium Typography -->
+    <!-- Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Inter:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     
     <style>
-        :root {
-            /* Premium Color System */
-            --black-void: #000000;
-            --black-rich: #0a0a0f;
-            --black-soft: #12121a;
-            --gray-obsidian: #1e1e2e;
-            --gray-charcoal: #2d2d3a;
-            --gray-slate: #404055;
-            --gray-storm: #6b7280;
-            --gray-silver: #9ca3af;
-            --white-pure: #ffffff;
-            --white-pearl: #f8fafc;
-            
-            /* Luxury Accent Palette */
-            --purple-primary: #6d28d9;
-            --purple-light: #8b5cf6;
-            --purple-dark: #4c1d95;
-            --blue-deep: #1e3a8a;
-            --blue-primary: #2563eb;
-            --blue-light: #3b82f6;
-            --emerald: #10b981;
-            --sapphire: #3b82f6;
-            --ruby: #ef4444;
-            
-            /* Premium Gradients */
-            --gradient-luxury: linear-gradient(135deg, #1e3a8a 0%, #2563eb 25%, #6d28d9 75%, #4c1d95 100%);
-            --gradient-night: linear-gradient(135deg, #0a0a0f 0%, #12121a 50%, #1e1e2e 100%);
-            --gradient-glass: linear-gradient(135deg, rgba(109,40,217,0.1) 0%, rgba(37,99,235,0.05) 100%);
-            --gradient-glow: radial-gradient(circle at center, rgba(109, 40, 217, 0.15) 0%, transparent 70%);
-            
-            /* Professional Shadows */
-            --shadow-ambient: 0 1px 3px rgba(0,0,0,0.1);
-            --shadow-elevated: 0 4px 12px rgba(0,0,0,0.15);
-            --shadow-floating: 0 8px 32px rgba(0,0,0,0.12);
-            --shadow-dramatic: 0 20px 60px rgba(0,0,0,0.4);
-            --shadow-luxury: 0 4px 20px rgba(109, 40, 217, 0.25);
-            --glow-purple: 0 0 30px rgba(109, 40, 217, 0.3);
-            
-            /* Layout Constants */
-            --container-max: 1400px;
-            --section-padding: 120px;
-            --element-radius: 12px;
-            --border-width: 1px;
-            
-            /* Animation Curves */
-            --ease-luxury: cubic-bezier(0.23, 1, 0.320, 1);
-            --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            /* Washington Institute light theme colors */
+            --navy-header: #0a3254;
+            --background-light: #f8f9fa;
+            --background-white: #ffffff;
+            --text-black: #212529;
+            --text-dark: #343a40;
+            --text-gray: #6c757d;
+            --text-muted: #868e96;
+            --text-white: #ffffff;
+            --accent-gold: #d4a574;
+            --accent-amber: #f59e0b;
+            --border-light: #dee2e6;
+            --border-subtle: #e9ecef;
+            --shadow-card: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
         html {
             scroll-behavior: smooth;
-            font-size: 16px;
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--black-void);
-            color: var(--white-pure);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: var(--background-white);
+            color: var(--text-dark);
             line-height: 1.6;
-            font-weight: 400;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-rendering: optimizeLegibility;
         }
 
-        /* Custom Cursor */
-        body {
-            cursor: none;
-        }
-
-        .cursor {
-            position: fixed;
-            width: 12px;
-            height: 12px;
-            background: var(--purple-light);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.2s ease;
-        }
-
-        .cursor.hover {
-            transform: scale(2);
-        }
-
-        /* Premium Container */
-        .container {
-            max-width: var(--container-max);
-            margin: 0 auto;
-            padding: 0 2rem;
-        }
-
-        /* Luxury Header */
-        .header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-            background: rgba(0, 0, 0, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: var(--border-width) solid rgba(109, 40, 217, 0.1);
-        }
-
-        .header-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 1.5rem 0;
-        }
-
-        /* Premium Logo */
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            text-decoration: none;
-            color: var(--white-pure);
-        }
-
-        .logo-mark {
-            width: 48px;
-            height: 48px;
-            position: relative;
-        }
-
-        .logo-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-            font-weight: 600;
-            letter-spacing: 0.02em;
-        }
-
-        /* Navigation */
-        .nav {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            font-size: 0.9rem;
-            font-weight: 400;
-            color: var(--gray-silver);
-            text-decoration: none;
-            letter-spacing: 0.02em;
-            transition: color 0.3s var(--ease-smooth);
-            position: relative;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 1px;
-            background: var(--gold-primary);
-            transition: width 0.3s var(--ease-luxury);
-        }
-
-        .nav-link:hover {
-            color: var(--purple-light);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
+        /* PAGE 1 - HEADER & TRANSITION */
+        .page-one {
             min-height: 100vh;
             display: flex;
-            align-items: center;
-            position: relative;
-            padding: var(--section-padding) 0;
-            background: linear-gradient(135deg, #0a0a0f 0%, #12121a 25%, #1e1e2e 50%, #2d2d3a 100%);
+            flex-direction: column;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--gradient-glow);
-            opacity: 0.6;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
+        /* Header Section */
+        .header {
+            background: var(--navy-header);
+            padding: 2rem 0;
             text-align: center;
+            border-bottom: 2px solid var(--accent-gold);
         }
 
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(109, 40, 217, 0.1);
-            border: var(--border-width) solid rgba(109, 40, 217, 0.2);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            margin-bottom: 2rem;
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: var(--purple-light);
-            letter-spacing: 0.02em;
-            animation: fadeInUp 0.8s var(--ease-luxury);
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            background: var(--emerald);
-            border-radius: 50%;
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
-
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: clamp(3rem, 8vw, 6rem);
-            font-weight: 400;
-            line-height: 1.1;
-            margin-bottom: 2rem;
-            background: linear-gradient(135deg, var(--white-pure) 0%, var(--gray-silver) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: fadeInUp 0.8s var(--ease-luxury) 0.2s both;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
+        .site-title {
+            font-size: 2rem;
             font-weight: 300;
-            color: var(--gray-silver);
-            margin-bottom: 1rem;
-            letter-spacing: 0.02em;
-            animation: fadeInUp 0.8s var(--ease-luxury) 0.4s both;
-        }
-
-        .hero-description {
-            font-size: 1.125rem;
-            color: var(--gray-storm);
-            max-width: 600px;
-            margin: 0 auto 3rem;
-            line-height: 1.7;
-            animation: fadeInUp 0.8s var(--ease-luxury) 0.6s both;
-        }
-
-        /* Premium CTA Button */
-        .cta-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            background: var(--gradient-luxury);
-            color: var(--black-void);
-            text-decoration: none;
-            padding: 1rem 2rem;
-            border-radius: var(--element-radius);
-            font-weight: 600;
-            font-size: 1rem;
-            letter-spacing: 0.02em;
-            box-shadow: var(--shadow-luxury);
-            transition: all 0.4s var(--ease-luxury);
-            animation: fadeInUp 0.8s var(--ease-luxury) 0.8s both;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .cta-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .cta-primary:hover::before {
-            left: 100%;
-        }
-
-        .cta-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--glow-purple);
-        }
-
-        .cta-icon {
-            font-size: 1.25rem;
-            transition: transform 0.3s var(--ease-luxury);
-        }
-
-        .cta-primary:hover .cta-icon {
-            transform: translateX(4px);
-        }
-
-        /* Transition Section */
-        .transition {
-            padding: var(--section-padding) 0;
-            background: var(--black-rich);
-            position: relative;
-        }
-
-        .transition::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--purple-primary), transparent);
-            opacity: 0.3;
-        }
-
-        .transition-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .transition-info {
-            background: var(--gradient-glass);
-            backdrop-filter: blur(20px);
-            border: var(--border-width) solid rgba(255, 255, 255, 0.1);
-            border-radius: var(--element-radius);
-            padding: 3rem;
-            box-shadow: var(--shadow-floating);
-        }
-
-        .section-label {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 0.75rem;
-            font-weight: 600;
-            color: var(--purple-light);
-            text-transform: uppercase;
             letter-spacing: 0.15em;
-            margin-bottom: 1rem;
+            text-transform: uppercase;
+            color: var(--text-white);
+            margin: 0;
         }
 
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            font-weight: 500;
-            line-height: 1.2;
-            margin-bottom: 1.5rem;
-            color: var(--white-pure);
-        }
-
-        .section-text {
-            font-size: 1.125rem;
-            color: var(--gray-silver);
-            line-height: 1.7;
-            margin-bottom: 2rem;
-        }
-
-        .timeline {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-
-        .timeline-date {
-            font-family: 'JetBrains Mono', monospace;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--purple-light);
-        }
-
-        .timeline-line {
-            height: 2px;
-            background: var(--gradient-luxury);
+        /* Main Content Area */
+        .main-content {
             flex: 1;
-            border-radius: 1px;
-        }
-
-        /* Mission Section */
-        .mission {
-            padding: var(--section-padding) 0;
-            background: var(--black-soft);
-        }
-
-        .mission-header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-
-        .mission-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .mission-card {
-            background: var(--gradient-glass);
-            backdrop-filter: blur(20px);
-            border: var(--border-width) solid rgba(255, 255, 255, 0.1);
-            border-radius: var(--element-radius);
-            padding: 2.5rem;
-            position: relative;
-            transition: all 0.4s var(--ease-luxury);
-            overflow: hidden;
-        }
-
-        .mission-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: var(--gradient-glow);
-            opacity: 0;
-            transition: opacity 0.4s var(--ease-luxury);
-        }
-
-        .mission-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(109, 40, 217, 0.3);
-            box-shadow: var(--shadow-dramatic);
-        }
-
-        .mission-card:hover::before {
-            opacity: 0.3;
-        }
-
-        .mission-icon {
-            width: 64px;
-            height: 64px;
-            background: var(--gradient-luxury);
-            border-radius: var(--element-radius);
+            background: var(--background-light);
+            padding: 4rem 2rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 10;
         }
 
-        .mission-icon svg {
-            width: 32px;
-            height: 32px;
-            color: var(--black-void);
+        .content-wrapper {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        /* Mission Box */
+        .mission-box {
+            background: var(--background-white);
+            border: 1px solid var(--border-light);
+            padding: 3rem;
+            margin-bottom: 3rem;
+            border-radius: 4px;
+            box-shadow: var(--shadow-card);
         }
 
         .mission-title {
-            font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--white-pure);
-            margin-bottom: 1rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .mission-description {
-            font-size: 1rem;
-            color: var(--gray-silver);
-            line-height: 1.6;
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Current Platform */
-        .current-platform {
+            font-weight: 500;
+            color: var(--text-black);
+            margin-bottom: 2rem;
             text-align: center;
-            padding: 2rem;
-            background: rgba(109, 40, 217, 0.05);
-            border: var(--border-width) solid rgba(109, 40, 217, 0.2);
-            border-radius: var(--element-radius);
         }
 
-        .platform-link {
-            color: var(--purple-light);
-            text-decoration: none;
+        .mission-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .mission-item {
+            color: var(--text-dark);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            padding-left: 2rem;
+            position: relative;
+        }
+
+        .mission-item::before {
+            content: "•";
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+        }
+
+        .mission-item strong {
+            color: var(--text-black);
             font-weight: 600;
-            transition: color 0.3s var(--ease-smooth);
+            text-transform: uppercase;
         }
 
-        .platform-link:hover {
-            color: var(--purple-primary);
+        /* Transition Notice */
+        .transition-notice {
+            background: var(--accent-amber);
+            padding: 2.5rem;
+            border-radius: 4px;
+            text-align: center;
+            color: var(--text-black);
+            box-shadow: 0 4px 8px rgba(245, 158, 11, 0.2);
+        }
+
+        .transition-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .transition-text {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .transition-subtitle {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--navy-header);
+            color: var(--text-white);
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button:hover {
+            background: #082844;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .cta-arrow {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .cta-button:hover .cta-arrow {
+            transform: translateX(4px);
+        }
+
+        .cta-link {
+            display: block;
+            margin-top: 1rem;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            opacity: 0.9;
+        }
+
+        /* PAGE 2 - CONTINUITY MESSAGE */
+        .page-two {
+            min-height: 100vh;
+            background: var(--background-light);
+            padding: 4rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .continuity-wrapper {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .continuity-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .continuity-title {
+            font-size: 2.5rem;
+            font-weight: 300;
+            color: var(--text-black);
+            margin-bottom: 1rem;
+        }
+
+        .continuity-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+        }
+
+        /* Article Cards Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .article-card {
+            background: var(--background-white);
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .article-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--accent-gold);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-card:hover::before {
+            transform: translateX(0);
+        }
+
+        .article-tag {
+            display: inline-block;
+            background: var(--navy-header);
+            color: var(--text-white);
+            padding: 0.25rem 0.75rem;
+            border-radius: 2px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+        }
+
+        .article-title {
+            font-size: 1.25rem;
+            color: var(--text-black);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            min-height: 3.5rem;
+        }
+
+        .article-meta {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+
+        .article-date {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Message Box */
+        .message-box {
+            background: var(--background-white);
+            border: 1px solid var(--border-light);
+            border-radius: 4px;
+            padding: 2rem;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .message-text {
+            font-size: 1.2rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .message-link {
+            color: var(--navy-header);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .message-link:hover {
+            color: #082844;
+            text-decoration: underline;
         }
 
         /* Footer */
         .footer {
-            padding: 3rem 0;
-            background: var(--black-void);
-            border-top: var(--border-width) solid rgba(255, 255, 255, 0.1);
             text-align: center;
+            padding: 3rem 2rem;
+            background: var(--background-white);
+            border-top: 1px solid var(--border-light);
         }
 
         .footer-text {
-            font-size: 0.875rem;
-            color: var(--gray-storm);
+            color: var(--text-gray);
+            font-size: 0.9rem;
         }
 
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .footer-divider {
+            margin: 0 0.5rem;
+            color: var(--accent-gold);
         }
 
-        /* Responsive Design */
-        @media (max-width: 1024px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-            
-            .transition-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-        }
-
+        /* Responsive */
         @media (max-width: 768px) {
-            body {
-                cursor: auto;
+            .site-title {
+                font-size: 1.5rem;
             }
-            
-            .cursor {
-                display: none;
-            }
-            
-            .nav {
-                display: none;
-            }
-            
-            .hero {
-                padding: 80px 0;
-            }
-            
-            .hero-title {
-                font-size: 3rem;
-            }
-            
-            .mission-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .transition-info {
+
+            .mission-box {
                 padding: 2rem;
             }
-            
-            .section-title {
+
+            .transition-notice {
+                padding: 2rem;
+            }
+
+            .transition-title {
+                font-size: 1.5rem;
+            }
+
+            .continuity-title {
                 font-size: 2rem;
             }
-        }
 
-        @media (max-width: 480px) {
-            .container {
-                padding: 0 1rem;
-            }
-            
-            .hero-badge {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
-            }
-            
-            .cta-primary {
-                padding: 0.875rem 1.5rem;
-                font-size: 0.9rem;
+            .articles-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
-
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
+    <!-- PAGE 1 - HEADER & TRANSITION -->
+    <section class="page-one">
+        <header class="header">
+            <h1 class="site-title">Militia Spotlight</h1>
+        </header>
 
-    <!-- Premium Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">
-                    <div class="logo-mark">
-                        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#2563eb;stop-opacity:1"/>
-                                    <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:1"/>
-                                </linearGradient>
-                            </defs>
-                            <circle cx="24" cy="24" r="22" fill="none" stroke="url(#logoGradient)" stroke-width="1.5" opacity="0.4"/>
-                            <circle cx="24" cy="24" r="16" fill="none" stroke="url(#logoGradient)" stroke-width="1.5" opacity="0.6"/>
-                            <circle cx="24" cy="24" r="10" fill="none" stroke="url(#logoGradient)" stroke-width="2" opacity="0.8"/>
-                            <circle cx="24" cy="24" r="4" fill="url(#logoGradient)"/>
-                            <line x1="4" y1="24" x2="10" y2="24" stroke="url(#logoGradient)" stroke-width="2"/>
-                            <line x1="38" y1="24" x2="44" y2="24" stroke="url(#logoGradient)" stroke-width="2"/>
-                            <line x1="24" y1="4" x2="24" y2="10" stroke="url(#logoGradient)" stroke-width="2"/>
-                            <line x1="24" y1="38" x2="24" y2="44" stroke="url(#logoGradient)" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <div class="logo-text">Militia Spotlight</div>
-                </a>
-                <nav class="nav">
-                    <a href="#transition" class="nav-link">Transition</a>
-                    <a href="#mission" class="nav-link">Mission</a>
-                    <a href="#platform" class="nav-link">Current Platform</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-badge">
-                    <div class="status-dot"></div>
-                    Platform Migration in Progress
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="mission-box">
+                    <h2 class="mission-title">Militia Spotlight uses open source monitoring to:</h2>
+                    <ul class="mission-list">
+                        <li class="mission-item">
+                            <strong>Understand</strong> the objectives, structure, and activity of Iran-backed militias in Iraq and Syria;
+                        </li>
+                        <li class="mission-item">
+                            <strong>Expose</strong> militia information operations and disinformation campaigns;
+                        </li>
+                        <li class="mission-item">
+                            <strong>Identify</strong> linkages between groups and with Iran to increase accountability; and
+                        </li>
+                        <li class="mission-item">
+                            <strong>Deny</strong> anonymity and deniability to Iran-backed militias.
+                        </li>
+                    </ul>
                 </div>
-                <h1 class="hero-title">Strategic<br>Insights</h1>
-                <p class="hero-subtitle">Independent OSINT Platform</p>
-                <p class="hero-description">
-                    Militia Spotlight is transitioning to an independent intelligence platform, 
-                    continuing our comprehensive analysis of Iran-backed militia networks with 
-                    enhanced capabilities and deeper investigative resources.
-                </p>
-                <a href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" target="_blank" rel="noopener" class="cta-primary">
-                    Access Current Reports
-                    <span class="cta-icon">→</span>
-                </a>
+
+                <div class="transition-notice">
+                    <h2 class="transition-title">Moving to a New Home - September 2025</h2>
+                    <p class="transition-text">Militia Spotlight is transitioning from The Washington Institute to an independent platform.</p>
+                    <p class="transition-subtitle">Visit the supplementary Militia Spotlight: Profiles hub.</p>
+                    <a href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" class="cta-button" target="_blank" rel="noopener">
+                        Continue Reading at Washington Institute
+                        <span class="cta-arrow">→</span>
+                    </a>
+                    <span class="cta-link">washingtoninstitute.org/policy-analysis/series/militia-spotlight</span>
+                </div>
             </div>
-        </div>
+        </main>
     </section>
 
-    <!-- Transition Section -->
-    <section class="transition" id="transition">
-        <div class="container">
-            <div class="transition-content">
-                <div>
-                    <div class="section-label">Platform Evolution</div>
-                    <h2 class="section-title">Moving to Independence</h2>
-                    <p class="section-text">
-                        After establishing credibility at The Washington Institute for Near East Policy, 
-                        Militia Spotlight is evolving into an independent intelligence platform to expand 
-                        our analytical capabilities and operational scope.
-                    </p>
-                    <div class="timeline">
-                        <div class="timeline-date">SEP 2025</div>
-                        <div class="timeline-line"></div>
-                    </div>
-                </div>
-                <div class="transition-info">
-                    <div class="section-label">Enhanced Capabilities</div>
-                    <h3 class="section-title">Next-Generation OSINT</h3>
-                    <p class="section-text">
-                        Our new independent platform will feature advanced analytical tools, 
-                        expanded geographic coverage, and enhanced data visualization capabilities 
-                        for comprehensive threat assessment.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- PAGE 2 - CONTINUITY MESSAGE -->
+    <section class="page-two">
+        <div class="continuity-wrapper">
+            <header class="continuity-header">
+                <h2 class="continuity-title">Articles Continue at Washington Institute</h2>
+                <p class="continuity-subtitle">Access our comprehensive analysis and reports</p>
+            </header>
 
-    <!-- Mission Section -->
-    <section class="mission" id="mission">
-        <div class="container">
-            <div class="mission-header">
-                <div class="section-label">Core Objectives</div>
-                <h2 class="section-title">Intelligence Mission</h2>
-                <p class="section-text">
-                    Our platform provides comprehensive analysis through rigorous open-source 
-                    intelligence methodologies, supporting strategic decision-making with actionable insights.
+            <div class="articles-grid">
+                <article class="article-card">
+                    <span class="article-tag">Brief Analysis</span>
+                    <h3 class="article-title">Latest Assessment of Militia Activities in Syria</h3>
+                    <div class="article-meta">
+                        <p class="article-date">December 2024</p>
+                        <p class="article-author">Policy Analysis Team</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <span class="article-tag">Brief Analysis</span>
+                    <h3 class="article-title">Iran-Backed Networks: Command Structure Updates</h3>
+                    <div class="article-meta">
+                        <p class="article-date">December 2024</p>
+                        <p class="article-author">Intelligence Unit</p>
+                    </div>
+                </article>
+
+                <article class="article-card">
+                    <span class="article-tag">Brief Analysis</span>
+                    <h3 class="article-title">Information Warfare Tactics and Countermeasures</h3>
+                    <div class="article-meta">
+                        <p class="article-date">November 2024</p>
+                        <p class="article-author">Strategic Analysis Division</p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="message-box">
+                <p class="message-text">
+                    All current analysis available at 
+                    <a href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" class="message-link" target="_blank" rel="noopener">
+                        The Washington Institute
+                    </a>
                 </p>
             </div>
-            
-            <div class="mission-grid">
-                <div class="mission-card">
-                    <div class="mission-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
-                        </svg>
-                    </div>
-                    <h3 class="mission-title">Understand</h3>
-                    <p class="mission-description">
-                        Comprehensive analysis of objectives, structure, and operational patterns 
-                        of Iran-backed militias across multiple theaters.
-                    </p>
-                </div>
-                
-                <div class="mission-card">
-                    <div class="mission-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-                        </svg>
-                    </div>
-                    <h3 class="mission-title">Expose</h3>
-                    <p class="mission-description">
-                        Reveal disinformation campaigns, propaganda networks, and information 
-                        warfare tactics employed across digital and traditional media.
-                    </p>
-                </div>
-                
-                <div class="mission-card">
-                    <div class="mission-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M9 11H7v2h2v-2zm4 0h-2v2h2v-2zm4 0h-2v2h2v-2zm2-7h-1V2h-2v2H8V2H6v2H5c-1.1 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V9h14v11z"/>
-                        </svg>
-                    </div>
-                    <h3 class="mission-title">Identify</h3>
-                    <p class="mission-description">
-                        Map organizational structures, leadership hierarchies, and command 
-                        relationships through comprehensive network analysis.
-                    </p>
-                </div>
-                
-                <div class="mission-card">
-                    <div class="mission-icon">
-                        <svg viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 2 2h8c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/>
-                        </svg>
-                    </div>
-                    <h3 class="mission-title">Inform</h3>
-                    <p class="mission-description">
-                        Provide actionable intelligence briefings and strategic assessments 
-                        to policymakers and security professionals.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="current-platform">
-                <p>Currently available at: <a href="https://washingtoninstitute.org/policy-analysis/series/militia-spotlight" target="_blank" rel="noopener" class="platform-link">The Washington Institute for Near East Policy</a></p>
-            </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <p class="footer-text">© 2025 Militia Spotlight | Independent Intelligence Platform</p>
-        </div>
+        <p class="footer-text">
+            © 2025 The Washington Institute for Near East Policy
+            <span class="footer-divider">|</span>
+            Transitioning to militiaspotlight.com
+        </p>
     </footer>
-
-    <script>
-        // Simple Custom Cursor
-        const cursor = document.querySelector('.cursor');
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX - 6 + 'px';
-            cursor.style.top = e.clientY - 6 + 'px';
-        });
-
-        // Cursor hover effects
-        const hoverElements = document.querySelectorAll('a, .mission-card');
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
-            el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
-        });
-
-        // Smooth scrolling for navigation
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const target = document.querySelector(link.getAttribute('href'));
-                target.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
-
-        // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function(entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationPlayState = 'running';
-                }
-            });
-        }, observerOptions);
-
-        // Observe animated elements
-        document.querySelectorAll('.mission-card').forEach(card => {
-            observer.observe(card);
-        });
-    </script>
 </body>
 </html>
